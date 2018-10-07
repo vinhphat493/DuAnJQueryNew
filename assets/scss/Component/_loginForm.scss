@@ -1,0 +1,141 @@
+#myModal{
+    .modal-dialog{
+        transform: translate(0,30%)    ;
+        -webkit-transform: translate(0,30%)    ;
+        -moz-transform: translate(0,30%)    ;
+        -ms-transform: translate(0,30%)    ;
+        -o-transform: translate(0,30%)    ;
+        .row{
+            height: 350px;
+            .left{
+                position: relative;
+                padding: 0;
+                background-image: url("../img/picModal.jpg");
+                @extend .bgImg;
+                z-index: 10;
+                height: 100%;
+                @include MediaQuery(992px){
+                    display: none;
+                }
+                .bgOver{
+                    background-color: $colorDarkOp;
+                    height: 100%;
+                }
+                .inner{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%)            ;
+                    -webkit-transform: translate(-50%,-50%)            ;
+                    -moz-transform: translate(-50%,-50%)            ;
+                    -ms-transform: translate(-50%,-50%)            ;
+                    -o-transform: translate(-50%,-50%)            ;
+                    width:80%;
+                    h3{
+                        color: $colorWhite;
+                        line-height: 45px;
+                    }
+                    .btnLeft{
+                        background-color: transparent;
+                        border: 1px solid $colorWhite;
+                        color: $colorWhite;
+                        &:hover{
+                            color: $colorHover;
+                        }
+                    }
+                }
+            }
+            .right{
+                position: relative;
+                padding: 0;
+                .closeModal{
+                    display: inline-block;
+                    padding: 0 $pd-1;
+                    background-color: $colorGray;
+                    font-size: $fs-3;
+                    position: absolute;
+                    right: 0;
+                    color: $colorDark;
+                    &:hover{
+                        color:$colorDarkOp;
+                    }
+                }
+                .inner{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%)            ;
+                    -webkit-transform: translate(-50%,-50%)            ;
+                    -moz-transform: translate(-50%,-50%)            ;
+                    -ms-transform: translate(-50%,-50%)            ;
+                    -o-transform: translate(-50%,-50%)            ;
+                    width:80%;
+                    h2{
+                        text-align: center;
+                        margin-bottom: $mg-2;
+                    }
+                    .formQuenMK-content{
+                        padding : 0 $pd-2;
+                    }
+                    .rightInput{
+                        border: 1px solid $colorGray;
+                        border-radius: 5px                                            ;
+                        -webkit-border-radius: 5px                                            ;
+                        -moz-border-radius: 5px                                            ;
+                        -ms-border-radius: 5px                                            ;
+                        -o-border-radius: 5px                             ;
+                        padding-left: $pd-1;  
+                        &:nth-child(3){
+                            padding-left: $pd-2;
+                        }
+                        i{
+                            font-size: $fs-2;  
+                        }
+                        input{
+                            border:none;
+                            display: inline;
+                            width: 90%;
+                            height: 40px;
+                            font-size: $fs-2; 
+                            &:focus{
+                                box-shadow: unset;
+                            }
+                        }
+                        input[type="password"]{
+                            padding-left: 20px;
+                        }   
+                    }
+                    #right-QuenMK{
+                        margin-left: $mg-2;
+                    }
+                    .rightFooterFirst{
+                        @include MediaQuery(992px){
+                            display: none;
+                        }
+                    }
+                    .rightFooter{
+                        display: none;
+                        @include MediaQuery(992px){
+                            display: block!important;
+                        }
+                        .rightFooterRow{
+                            height: unset;
+                            .btnRespon{
+                                padding: $pd-1 $pd-20;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.displayBlock{
+    display: block;
+}
+
+.displayNone{
+    display: none;
+}
+

@@ -1,0 +1,16 @@
+a,a:hover,a:visited{text-decoration: none !important;}
+li{list-style: none;}
+ul{margin: 0;}
+*,body{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+body{
+    overflow-x:hidden;
+}
+header,nav,aside,section,article,main,footer{
+	display: block;
+}

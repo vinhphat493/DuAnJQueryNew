@@ -1,0 +1,76 @@
+#diemuuviet{
+    position: relative;
+    .diemuuvietItem{
+        #titleDiemUuViet{       
+            h1{
+                color : var(--fontDiemUuViet);
+                font-size: 4rem;
+            }
+            h4{
+                font-weight: normal;
+            }
+        }
+        .block{
+            position: relative;
+            padding-left: 85px;
+            margin-bottom: 30px;
+            padding-right: 10px;
+            overflow: hidden;
+            
+            &:hover{
+                .number,h4{
+                    color: $colorDiemUuViet;
+                }
+            }
+            .number{
+                position: absolute;
+                left: 1%;
+                top: -34px;
+                font-style: italic;
+                color: #454545;
+                font-weight: 800;
+                font-size: 92px;
+            }
+        }
+        
+    }
+    
+    .bg-over{
+        overflow: hidden;
+        background-color: white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 65%;
+        height: 100%;
+        -ms-transform: skewX(-20deg); /* IE 9 */
+        -webkit-transform: skewX(-20deg); /* Safari 3-8 */
+        transform: skewX(-20deg);
+        @include MediaQuery (1200px){
+            width: 75%
+        }
+    }
+    .bg-image2{
+        background-image: url(../img/training2.jpg);
+        height: 100%;
+        position: absolute;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        top: 0;
+        width: 60%;
+        right: 0;
+        overflow: hidden;
+        @include MediaQuery (1200px){
+            width: 50%
+        }
+        @include MediaQuery(992px){
+            width: 0%;
+        }
+    }
+}
+
+
+

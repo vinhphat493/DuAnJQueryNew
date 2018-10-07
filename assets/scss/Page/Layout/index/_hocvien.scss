@@ -1,0 +1,51 @@
+#hocvien{
+    .title-hocvien{
+        
+        h1{
+            font-size: $fs-5;
+            position: relative;
+            margin-bottom: $mg-2;
+            text-transform: uppercase;
+            @include MediaQuery (992px){
+                font-size: $fs-2;
+            }
+            &::before{
+                content: '';
+                width: 65px;
+                height: 3px;
+                background-color: $colorDiemUuViet;
+                position: absolute;
+                bottom: -45%;
+                left: 47%;
+                
+            }
+        }
+    }
+    .hocvien{
+        padding-top: $pd-2;
+        .itemHocVien{
+            padding: $pd-1;
+            position: relative;
+            overflow: hidden;
+            &::before{
+                content: '';
+                position: absolute;
+                height: 2px;
+                width: 0;
+                top: 0;
+                left: 1%;
+                background-color: $colorDiemUuViet;
+            }
+            &:hover{
+                &::before{
+                    animation-name: aniItemHocVien;
+                    animation-duration: 2s;
+                }
+            }
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

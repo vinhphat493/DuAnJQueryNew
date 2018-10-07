@@ -1,0 +1,119 @@
+#gioithieu{
+    padding-top: $pd-60;
+}
+
+.gt_Part1Left{
+    line-height: 25px;
+}
+
+.gt_Part1Left>p{
+    font-size: 2.5rem;
+    font-weight: 400;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.gt_Part1Left>p::before{
+    content: "";
+    position: absolute;
+    background-color: gray;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    opacity: 0.4;
+}
+
+.gt_Part1Left h4{
+    padding-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.gt_Part1Left .fa-angle-double-right{
+    font-size: 1.5rem;
+    color: brown;
+}
+.gt_Part1Left .content{
+    font-size: 1rem;
+    position: relative;
+}
+.gt_Part1Left .content>i{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.gt_Part1Left .content p{
+    margin-left: 5%;
+}
+
+.gt_Part1Left .content p>i{
+    color: var(--fontDiemUuViet);
+    
+}
+
+.gt_Part1Right{
+    position: relative;
+    height: 600px;
+}
+
+.gt_Part1RightImg{
+    background-image: url(../img/GT1.png);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+.gt_Part2 {
+    /* font-size: 1.4rem; */
+    padding: 1rem 4rem;
+    
+}
+
+.gt_Part2 p{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.gt_Part2 p:last-child{
+    color: brown;
+    
+}
+
+.gt_Part3Left {
+    padding-top: 4rem;
+    padding-left: 0;
+}
+
+.p1 {
+    margin-bottom: 0;
+}
+
+.gt_Part3Left .s1{
+    font-weight: 500;
+}
+
+.gt_Part3Right{
+    padding-top: 4rem;
+    padding-right: 0;
+}
+
+.gt_Part3Right .p2{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.gt_Part3Right .p2:nth-child(2),.gt_Part3Right .p2:nth-child(3){
+    color: brown;
+    margin-bottom:0 
+}

@@ -1,0 +1,22 @@
+#pageKhoaHoc{
+    padding-top: $pd-60;
+    .form-group{
+        text-align: right;
+        padding-bottom: $pd-30;
+        #sapxepKhoaHoc{
+            width: 20%;
+            display: inline-block;
+        }
+    }
+    .khoahocItem{
+        overflow: hidden;
+        .imgKhoaHoc{
+            width: 100%;
+            height: 250px;
+            img{
+                width: 100%!important;
+                height: 100%!important;
+            }
+        }
+    }
+}

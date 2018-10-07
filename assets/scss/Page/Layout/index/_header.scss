@@ -1,0 +1,41 @@
+#header{
+    background-color: $colorWhite;
+    z-index: 100;
+    width: 100%;
+    .navbar{
+        .navbar-brand{
+            @include MediaQuery(1200px){
+                margin-right: $mg-1;
+            }
+            img{
+                height: 60px!important; 
+            }
+        }
+        .navbar-toggler{
+            border: 1px solid $colorDark;
+        }
+    } 
+    .form-inline{
+        input{
+            @include MediaQuery(992px){
+                width: 88%;
+            }
+            @include MediaQuery(768px){
+                width: 80%;
+            }
+            @include MediaQuery(576px){
+                margin-right: $mg-1;
+            }
+        }
+    }
+    .nav-link{
+        color:$colorDark;
+        font-weight:600;
+        @include MediaQuery(1200px){
+            font-size: $fs-08;
+        }
+        &:hover{
+            color: $colorHover;
+        }
+    }
+}

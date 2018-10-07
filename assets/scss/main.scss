@@ -1,0 +1,25 @@
+@import 'Base/_reset.scss';
+
+
+@import 'Helpers/_variable.scss';
+@import 'Helpers/_animation.scss';
+@import 'Helpers/_mixin.scss';
+@import 'Helpers/_extend.scss';
+
+@import 'Component/_button.scss';
+@import 'Component/_loginForm.scss';
+
+@import 'Page/Layout/index/_header.scss';
+@import 'Page/Layout/index/_slider.scss';
+@import 'Page/Layout/index/_diemuuviet.scss';
+@import 'Page/Layout/index/_khoahoc.scss';
+@import 'Page/Layout/index/_hocvien.scss';
+@import 'Page/Layout/index/_footer.scss';
+
+@import 'Page/_danhsachkhoahoc.scss';
+@import 'Page/_chitietkhoahoc.scss';
+@import 'Page/_gioithieu.scss';
+
+
+
+

@@ -1,0 +1,108 @@
+#khoahoc{
+    padding: $pd-1 0;
+    .title-khoahoc{
+        padding: 0 $pd-200 $pd-30 $pd-200;
+        @include MediaQuery (1200px){
+           padding: 0 0 $pd-30 0;
+        }
+        h1{
+            line-height: 50px;
+            text-transform: uppercase;  
+            font-size: $fs-4;
+            margin: 0;
+            @include MediaQuery (992px){
+                font-size: $fs-2;
+            }
+        }
+        span{
+            font-size: $fs-5;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            @include MediaQuery (992px){
+                font-size: $fs-3;
+            }
+        }
+        p{
+            text-align: center;
+            line-height: 30px;
+            color: $colorAC;
+            word-spacing: 2px;
+            font-weight: 500;
+            @include MediaQuery (768px){
+                font-size: $fs-08;
+            }
+        }
+    }
+    .owl-carousel{
+        .owl-stage-outer{
+            height: 150px;
+            .owl-stage{
+                height: 150px;
+                width: 50px;
+                overflow-y: hidden;
+                @include MediaQuery (768px){
+                    width: 30px
+                }
+                .owl-item{
+                    width: 250px;
+                    @include MediaQuery (768px){
+                        width: 200px
+                    }
+                    img{
+                        margin: 0 auto;
+                        height: 150px;
+                        width: 150px;
+                        @include MediaQuery (768px){
+                            width: 100px;
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .owl-nav{
+            position: absolute;
+            top: 15%;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            @include MediaQuery (768px){
+                width: 120%;
+                top : 1%;
+                left:-10%;
+            }
+            .owl-prev,.owl-next{
+                background-color: transparent;
+                span{
+                    font-size: $fs-5;
+                    color: $colorDark
+                }
+            }
+        }
+        .owl-dots{
+            padding-top: $pd-30;
+            @include MediaQuery (768px){
+                padding-top: $pd-1;
+            }
+            button{
+                margin: $mg-1;
+                span{
+                    background-color: $colorDark;
+                    border: 1px solid $colorDark;
+                }
+            }
+            .active{
+                span{
+                    background-color: $colortraparent;
+                    transform: scale(1.5)                ;
+                    -webkit-transform: scale(1.5)                ;
+                    -moz-transform: scale(1.5)                ;
+                    -ms-transform: scale(1.5)                ;
+                    -o-transform: scale(1.5)                ;
+}
+            }
+        }
+    } 
+}

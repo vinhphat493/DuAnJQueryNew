@@ -1,0 +1,107 @@
+#chitietkhoahoc{
+    padding-bottom: $pd-200;
+    .title-chitietkhoahoc{
+        background-color: $colorDark;
+        padding: $pd-2 $pd-450 $pd-2 $pd-60;
+        color: $colorWhite;
+        @include MediaQuery (1200px){
+            padding: $pd-2 $pd-60 $pd-2 $pd-60;
+        }
+        h1{
+            font-size: $fs-5;
+            margin-bottom: $mg-2;
+            @include MediaQuery (1200px){
+                font-size: $fs-4
+            }
+            @include MediaQuery (992px){
+                font-size: $fs-3
+            }
+            @include MediaQuery (576px){
+                font-size: $fs-2
+            }
+        }
+        p {
+            span{
+                text-transform: uppercase;
+                color: $colorDiemUuViet;
+                font-weight: 600;
+            }
+        }
+    }
+    .body-chitietkhoahoc{
+        padding-top: $pd-30;
+        .moTaKhoaHoc{
+            padding-top: $pd-30;
+            .nav-pills{
+                .nav-item{
+                    .nav-link{
+                        color: $colorDark;
+                        font-weight: 600;
+                    }
+                    .active{
+                        background-color: transparent!important;
+                        color:$colorDark;
+                        border-bottom: 4px solid $colorHover;
+                    }
+                }
+            }
+            .tab-content{
+                padding-top: $pd-2;
+                .tab-pane{
+                    @include MediaQuery(992px){
+                        padding: 0;
+                    }
+                    .thongtingiangvien{
+                        img{
+                            width: 300px;
+                        }
+                        .p3{
+                            font-size: $fs-2;
+                            margin-top: $mg-1;
+                            i{
+                                color : $colorDiemUuViet;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+        .ghidanhKhoaHoc{
+            position: absolute;
+            right: 0;
+            top: -55%;
+            @include MediaQuery (1200px){
+                position: unset;
+                padding-top: $pd-30;
+            }
+            .card{
+                width: 400px;
+                @include MediaQuery (1200px){
+                    width: 300px;
+                }
+                @include MediaQuery (992px){
+                    width: 500px;
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .card-body{
+                    font-size: $fs-2;
+                    .card-title{
+                        font-size: $fs-2;
+                        @include MediaQuery (1200px){
+                            font-size: $fs-1;
+                        }
+                        @include MediaQuery (992px){
+                            font-size: $fs-2;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    
+}
