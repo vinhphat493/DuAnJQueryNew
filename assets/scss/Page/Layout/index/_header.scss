@@ -1,6 +1,7 @@
 #header{
     background-color: $colorWhite;
     z-index: 100;
+    box-shadow: 0 5px #fbfbfb;
     width: 100%;
     .navbar{
         .navbar-brand{
@@ -37,5 +38,8 @@
         &:hover{
             color: $colorHover;
         }
+    }
+    .active{
+        color:$colorHover
     }
 }

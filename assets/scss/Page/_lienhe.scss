@@ -1,0 +1,32 @@
+#pageLienHe{
+    background-color: $bgLight;
+    padding: $pd-30;
+    .left {
+        h1{
+            color: $colorHover;
+            text-align: center;
+            word-spacing: 10px;
+            letter-spacing: 10px;
+            position: relative;
+            &::before{
+                content: "";
+                width: 30%;
+                height: 5px;
+                background-color: $colorHover;
+                position: absolute;
+                bottom: -35%;
+                left: 32%;
+            }
+        }
+        .input{
+            max-width: 100%;
+            .input__field{
+                padding-top: $pd-20;
+                padding-bottom: $pd-20
+            }
+        }
+        #textTuVan{
+            width: 100%!important
+        }
+    }
+}

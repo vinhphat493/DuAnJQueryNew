@@ -1,0 +1,106 @@
+.user{
+    .row{
+        .title-User{
+            margin: 0 auto;
+            padding-top: $pd-30;
+            z-index: 100;
+            .userImg{
+                height: 200px;
+                width: 200px;
+                padding: 10px;
+                border: 1px solid $colorDark;
+                border-radius: 50%        ;
+                -webkit-border-radius: 50%        ;
+                -moz-border-radius: 50%        ;
+                -ms-border-radius: 50%        ;
+                -o-border-radius: 50%        ;
+                overflow: hidden;
+                // img{
+                //     height: 80%;
+                //     width: 80% ;
+                //     z-index: 10
+                // }
+            }
+            h1{
+                margin-top: $mg-1;
+                font-size: $fs-4;
+            }
+        }
+    }
+    .content{
+        @include MediaQuery(768px){
+            padding: 0;
+        }
+        #home{
+            height: 600px;
+        }
+        #listKH{
+            .khoahocItem{
+                .imgKhoaHoc{
+                    width: 350px;
+                    height: 250px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+        #ttTaiKhoan{
+            .row{
+                padding-bottom: $pd-100;
+                .form-group{
+                    margin-bottom: $pd-60;
+                    input{
+                        display: inline;
+                        width: 60%;
+                        float: right;
+                        outline: none;
+                        &:focus{
+                            box-shadow: unset;
+                        }
+                    }
+                    
+                }
+                .right{
+                    .form-group:nth-child(2){
+                        padding-right: $pd-100+$pd-60;
+                        @include MediaQuery(1200px){
+                            padding-right: $pd-100+$pd-1;
+                        }
+                        @include MediaQuery(992px){
+                            padding-right: $pd-20+$pd-2;
+                        }
+                        @include MediaQuery(768px){
+                            padding-right: $pd-20+$pd-30+$pd-100;
+                        }
+                        .form-check{
+                            display: inline;;
+                            float: right;
+                            margin: 0 $mg-2;
+                        }
+                    }
+                }
+            }
+            
+        }
+        #doiMKUser{
+            .row{
+                padding-bottom: $pd-100;
+                .form-group{
+                    margin-bottom: $pd-60;
+                    input{
+                        display: inline;
+                        width: 60%;
+                        float: right;
+                        outline: none;
+                        &:focus{
+                            box-shadow: unset;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}

@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CyberSoft Academy</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/particles.css">
-    <link rel="stylesheet" href="../../assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/img/favicon.png">
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
 </head>
 
 <body>
@@ -45,7 +45,7 @@
                         <a class="nav-link" href="lienhe.html">Liên Hệ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btnLogin" href="#">Đăng Nhập</a>
+                        <a class="nav-link" id="btnLogin" href="#">Đăng Nhập</a>
                     </li>
                 </ul>
 
@@ -206,6 +206,136 @@
     </main>
     <!-- END MAIN -->
 
+    <!-- Begin modal form Login & SignUp -->
+    <button type="button" id="modalDangNhap" class="btn btn-primary d-none" data-toggle="modal" data-target="#myModal">
+        Open modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- Modal form Login/SignUp -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 left">
+                            <div class="bgOver"></div>
+                            <div class="inner text-center">
+                                <h3>Bạn chưa có tài khoản CyberSoft</h3>
+                                <div class="form-group text-center mt-4">
+                                    <a href="#" class="btnModal btnLeft" id="signUpUser">Đăng Ký</a>
+                                </div>
+                                <div class="form-group text-center mt-4">
+                                    <a href="#" class="btnModal btnLeft" id="loginUser">Đăng Nhập</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 right">
+                            <a href="#" class="closeModal" data-dismiss="modal">
+                                <i class="fa fa-times"></i>
+                            </a>
+                            <div class="inner" id="formLogin">
+                                <h2>Đăng Nhập</h2>
+                                <div class="form-group rightInput">
+                                    <span>
+                                        <i class="fa fa-user-circle-o"></i>
+                                    </span>
+                                    <input type="text" autofocus="flase" class="form-control" placeholder="Tên Đăng Nhập"
+                                        id="idUser">
+                                </div>
+                                <div class="form-group rightInput">
+                                    <span>
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                    <input type="password" placeholder="Mật Khẩu" class="form-control" id="pwdUser">
+                                </div>
+                                <div class="right-rememberCheck">
+                                    <div class="form-check-inline" id="right-Check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="">Ghi nhớ tài khoản
+                                        </label>
+                                    </div>
+                                    <a href="#" id="right-QuenMK">
+                                        Quên mật khẩu ?
+                                    </a>
+                                </div>
+                                <div class="form-group text-center mt-4 rightFooterFirst">
+                                    <a href="#" class="btnModal btnRight" id="login">Đăng Nhập</a>
+                                </div>
+                                <div class="rightFooter container">
+                                    <div class="row rightFooterRow">
+                                        <div class="form-group text-center mt-5 col-12">
+                                            <a href="#" class="btnModal btnRespon" id="loginRespon">Đăng Nhập</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="inner" id="formQuenMK">
+                                <h2>Lấy lại mật khẩu</h2>
+                                <p class="text-center formQuenMK-content">
+                                    Để lấy lại mật khẩu, bạn nhập email đăng nhập vào ô dưới đây. Sau đó CyberSoft sẽ
+                                    gửi email hướng dẫn bạn khôi phục mật khẩu
+                                </p>
+                                <div class="form-group rightInput">
+                                    <span>
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                    <input type="text" autofocus="flase" class="form-control" placeholder="Email của bạn"
+                                        id="emailQuenMK">
+                                </div>
+                                <div class="form-group text-center mt-4 rightFooterQuenMK">
+                                    <a href="#" class="btnModal btnRight" id="btnQuenMK">Tiếp tục</a>
+                                </div>
+                            </div>
+
+                            <div class="inner" id="formSignUP">
+                                <h2>Đăng Ký</h2>
+                                <div class="form-group rightInput">
+                                    <span>
+                                        <i class="fa fa-user-circle-o"></i>
+                                    </span>
+                                    <input type="text" autofocus="flase" class="form-control" placeholder="Tên Đăng Nhập"
+                                        id="idUserNew">
+                                </div>
+                                <div class="form-group rightInput">
+                                    <span>
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                    <input type="text" autofocus="flase" class="form-control" placeholder="Email của bạn"
+                                        id="emailUser">
+                                </div>
+                                <div class="form-group rightInput">
+                                    <span>
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                    <input type="password" placeholder="Mật Khẩu" class="form-control" id="pwdUserNew">
+                                </div>
+                                <div class="form-group rightInput">
+                                    <span>
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                    <input type="password" placeholder="Nhập Lại Mật Khẩu" class="form-control" id="pwdUserNewP2">
+                                </div>
+                                <div class="form-group text-center mt-4 rightFooterFirst" id="divBtnSignUp">
+                                    <a href="#" class="btnModal btnRight" id="signUp">Đăng Ký</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer p-0" id="modalFooter">
+                    <div class="form-group text-center col-12">
+                        <p class="mb-0 mt-2">Nếu Chưa Có Tài Khoản</p>
+                        <i class="fa fa-hand-o-down"></i>
+                        <a href="#" class="btnModal btnRespon d-block" id="signUpRespon">Đăng Ký</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- BEGIN FOOTER -->
     <footer id="footer" class="pt-5 mt-5">
         <div class="container-fluid">
@@ -251,8 +381,12 @@
         </div>
     </footer>
     <!-- END FOOTER -->
+    <!-- Flie JQUERY -->
+    <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- File JS -->
-    <script src="../../assets/js/main.js"></script>
+    <script src="../../../assets/js/index.js"></script>
 </body>
 
 </html>

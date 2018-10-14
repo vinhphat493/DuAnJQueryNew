@@ -128,14 +128,21 @@
                 }
             }
         }
+        #modalFooter{
+            display: none;
+            @include MediaQuery(992px){
+                display: block;
+                background-color: $colorAC
+            }
+            #signUpRespon{
+                background-color: transparent;
+                border:1px solid $colorDark;
+                color:$colorDark;
+                &:hover{
+                    color: $colorHover;
+                }
+            }
+        }
     }
-}
-
-.displayBlock{
-    display: block;
-}
-
-.displayNone{
-    display: none;
 }
 
