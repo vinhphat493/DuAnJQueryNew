@@ -17,7 +17,10 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    <!-- CSS FONT-AWESOME -->
     <link rel="stylesheet" href="../../../../node_modules/font-awesome/css/font-awesome.min.css">
+    <!-- CSS PAGINATION -->
+    <link rel="stylesheet" href="../../../../assets/Vendors/Pagination/pagination.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -157,18 +160,13 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header p-0 pb-3 d-flex justify-content-between">
-                                <div class="search-box">
-                                    <a class="nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i
-                                            class="fa fa-bars"></i></a>
-                                    <a class="hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i
-                                            class="fa fa-search"></i></a>
-                                    <form class="app-search">
-                                        <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i
-                                                class="fa fa-times"></i></a></form>
+                                <div id="search-box">
+                                    <input type="text" class="search-txt" placeholder="Tìm người dùng"/>
+                                    <a class="search-btn" href="#"><i class="fa fa-search-plus"></i></a>
                                 </div>
                                 <div class="divBtn">
-                                    <button class="btn btn-info">Thêm Người Dùng</button>
-                                    <button class="btn btn-danger">Xóa Người Dùng</button>
+                                    <button class="btn btn-info" id="themND">Thêm Người Dùng</button>
+                                    <button class="btn btn-danger" id="xoaND">Xóa Người Dùng</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -176,54 +174,22 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th></th>
+                                                <th><input type="checkbox" id="checkAll"></th>
                                                 <th>Tài Khoản</th>
                                                 <th>Mật Khẩu</th>
                                                 <th>Họ & Tên</th>
                                                 <th>Email</th>
                                                 <th>Số Điện Thoại</th>
                                                 <th>Tên Loại</th>
-                                                <th>Mã Loại</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>Deshmukh</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>Deshmukh</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>Deshmukh</td>
-                                            </tr>
+                                        <tbody id="tbodyND">
+                                            
                                         </tbody>
                                     </table>
                                 </div>
+                                <div id="pagination-container" class="pagination"></div>
                             </div>
                         </div>
                     </div>
@@ -253,7 +219,7 @@
                             <!-- Modal Header -->
                             <div class="modal-header">
                                 <h4 class="modal-title">Modal Heading</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button type="button" class="close" style="cursor:pointer" data-dismiss="modal">&times;</button>
                             </div>
                             <!-- Modal body -->
                             <div class="modal-body">
@@ -308,7 +274,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../assets/node_modules/jquery/jquery.min.js"></script>
+    <script src="../../../../node_modules/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../assets/node_modules/bootstrap/js/popper.min.js"></script>
     <script src="../assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
@@ -323,6 +289,17 @@
     <!-- jQuery peity -->
     <script src="../assets/node_modules/peity/jquery.peity.min.js"></script>
     <script src="../assets/node_modules/peity/jquery.peity.init.js"></script>
+    <!-- Model Người Dùng -->
+    <script src="../../../Models/nguoidung.js"></script>
+    <script src="../../../Models/danhsachnguoidung.js"></script>
+    <!-- Service Người Dùng -->
+    <script src="../../../Services/nguoidungService.js"></script>
+    <!-- Controller Quản Lý Người Dùng -->
+    <script src="../../../Controllers/quanlynguoidung.js"></script>
+    <!-- Script Pagination -->
+    <script src="../../../../assets/Vendors/Pagination/pagination.min.js"></script>
+    <!-- Script SweetAlert -->
+    <script src="../../../../node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>
