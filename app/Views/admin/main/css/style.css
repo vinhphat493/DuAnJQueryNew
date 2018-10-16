@@ -5454,49 +5454,6 @@ File: scss
     width: 100%!important
   }
 
-  /* Search-box */
-  #search-box{
-    background-color: #2f3640;
-    height: 50px;
-    padding:10px;
-    border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
-    position: relative;
-}
-
-#search-box .search-btn{
-  position: absolute;
-  right: 0;
-  
-  color:#e84118;
-  float: right;
-  width: 50px;
-  height: 50px;
-  font-size:20px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  padding-top: 12px;
-}
-
-
-#search-box .search-txt{
-  border:none;
-  outline: none;
-  background: none;
-  float: left;
-  color:white;
-  font-size: 16px;
-}
 
 
 

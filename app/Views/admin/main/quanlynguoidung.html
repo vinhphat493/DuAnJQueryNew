@@ -115,8 +115,8 @@
                         <li> <a class="waves-effect waves-dark" href="quanlynguoidung.html" aria-expanded="false"><i
                                     class="fa fa-user-circle-o"></i><span class="hide-menu">Quản Lý Người Dùng</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="quanlykhoahoc.html" aria-expanded="false"><i class="fa fa-table"></i><span
-                                    class="hide-menu">Quản Lý Khóa Học</span></a>
+                        <li> <a class="waves-effect waves-dark" href="quanlykhoahoc.html" aria-expanded="false"><i
+                                    class="fa fa-table"></i><span class="hide-menu">Quản Lý Khóa Học</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="ghidanhkhoahoc.html" aria-expanded="false"><i
                                     class="fa fa-check-square"></i><span class="hide-menu">Ghi Danh Khóa Học</span></a>
@@ -158,11 +158,12 @@
                 <div class="row">
                     <!-- column -->
                     <div class="col-12">
+
                         <div class="card">
                             <div class="card-header p-0 pb-3 d-flex justify-content-between">
-                                <div id="search-box">
-                                    <input type="text" class="search-txt" placeholder="Tìm người dùng"/>
-                                    <a class="search-btn" href="#"><i class="fa fa-search-plus"></i></a>
+                                <div class="form-inline">
+                                    <input class="form-control mr-sm-2 " type="text" id="timnguoidung" placeholder="Tìm người dùng">
+                                    <button class="btn btn-outline-dark my-2 my-sm-0">Search</button>
                                 </div>
                                 <div class="divBtn">
                                     <button class="btn btn-info" id="themND">Thêm Người Dùng</button>
@@ -185,7 +186,7 @@
                                             </tr>
                                         </thead>
                                         <tbody id="tbodyND">
-                                            
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -194,6 +195,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -207,7 +209,8 @@
             <footer class="footer">
                 © 2018 Adminwrap by wrappixel.com
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" id="btnModal" style="cursor:pointer" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-primary" id="btnModal" style="cursor:pointer" data-toggle="modal"
+                    data-target="#myModal">
                     Open modal
                 </button>
 
@@ -215,7 +218,7 @@
                 <div class="modal fade" id="myModal">
                     <div class="modal-dialog">
                         <div class="modal-content">
-        
+
                             <!-- Modal Header -->
                             <div class="modal-header">
                                 <h4 class="modal-title">Modal Heading</h4>
@@ -253,9 +256,9 @@
                             </div>
                             <!-- Modal footer -->
                             <div class="modal-footer">
-        
+
                             </div>
-        
+
                         </div>
                     </div>
                 </div>
@@ -289,6 +292,9 @@
     <!-- jQuery peity -->
     <script src="../assets/node_modules/peity/jquery.peity.min.js"></script>
     <script src="../assets/node_modules/peity/jquery.peity.init.js"></script>
+    <!-- Script common -->
+    <script src="../../../../assets/Vendors/common.js"></script>
+    <script src="../../../../assets/Vendors/jQueryNhapNhay/dist/js/NhapNhay.js"></script>
     <!-- Model Người Dùng -->
     <script src="../../../Models/nguoidung.js"></script>
     <script src="../../../Models/danhsachnguoidung.js"></script>
