@@ -40,4 +40,19 @@ function ServiceNguoiDung(){
             dataType:"json"
         })
     }
+    this.LayThongTinNguoiDungHV = ()=>{
+        var apiURL = "http://sv.myclass.vn/api/QuanLyTrungTam/DanhSachHocvien";
+        return $.ajax({
+            url:apiURL,
+            type:"GET",
+            dataType : "json"
+        })
+    }
+    this.DangNhapND = (taikhoan,matkhau)=>{
+        var apiURL = `http://sv.myclass.vn/api/QuanLyTrungTam/DangNhap?taikhoan=${taikhoan}&matkhau=${matkhau}`;
+        return $.ajax({
+            url : apiURL,
+            type:"GET"
+        })
+    }
 }

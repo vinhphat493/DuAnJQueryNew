@@ -78,6 +78,9 @@ $(document).ready(() => {
         var tkNguoiDung = $(this).attr("taikhoan");
         console.log(tkNguoiDung);
         XoaNguoiDung(tkNguoiDung);
+        setTimeout(() => {
+            $(this).parents("tr").fadeOut("slow");
+        }, 1000);
     })
 
     //Check tất cả checkbox
@@ -100,6 +103,9 @@ $(document).ready(() => {
                 XoaNguoiDung(checkbox.value);
             }
         }
+        setTimeout(() => {
+            location.reload();
+        }, 2000);
     })
 
     //Hiện thị popup khi người dùng click vào nút chỉnh sửa
@@ -151,7 +157,19 @@ $(document).ready(() => {
 
         var nguoiDungNew = new NguoiDung(taiKhoan, matKhau, hoTen, email, soDT, maLoaiNguoiDung, tenLoaiNguoiDung);
         svNguoidung.CapNhatThongTinNguoiDung(nguoiDungNew).done((ketqua) => {
-            console.log("ketqua");
+            if (ketqua) {
+                swal({
+                    title: "Sửa thành công!",
+                    text: "Bạn đã sửa người dùng thành công!",
+                    icon: "success",
+                });
+                $(".swal-button").on('click', () => {
+                    $(".close").trigger('click');
+                })
+                setTimeout(() => {
+                    location.reload();//reload lại trang
+                }, 2000)
+            }
         }).fail((loi) => {
             console.log(loi)
         })
@@ -229,7 +247,6 @@ $(document).ready(() => {
                     icon: "success"
                 });
                 $(".swal-button").on('click', () => {
-                    location.reload();//reload lại trang
                 })
             }
         }).fail((loi) => {

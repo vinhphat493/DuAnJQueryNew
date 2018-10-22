@@ -47,8 +47,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="layouts/lienhe.html">Liên Hệ</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="dontLogin">
                         <a class="nav-link" id="btnLogin" href="#">Đăng Nhập</a>
+                    </li>
+                    <li class="nav-item dropdown" id="doneLogin">
+                        <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" id="tenUserLogin">
+
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#"><i class="fa fa-cog mr-2"></i>Cài Đặt</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-sign-out mr-2"></i>Thoát</a>
+                        </div>
                     </li>
                 </ul>
 
@@ -258,6 +268,9 @@
                             </a>
                             <div class="inner" id="formLogin">
                                 <h2>Đăng Nhập</h2>
+                                <div class="form-group bg-secondary p-2" id="divError">
+                                    <h5 id="errorText" class="text-danger"></h5>
+                                </div>
                                 <div class="form-group rightInput">
                                     <span>
                                         <i class="fa fa-user-circle-o"></i>
@@ -284,13 +297,14 @@
                                 <div class="form-group text-center mt-4 rightFooterFirst">
                                     <a href="#" class="btnModal btnRight" id="login">Đăng Nhập</a>
                                 </div>
-                                <div class="rightFooter container">
+
+                                <!-- <div class="rightFooter container">
                                     <div class="row rightFooterRow">
                                         <div class="form-group text-center mt-5 col-12">
-                                            <a href="#" class="btnModal btnRespon" id="loginRespon">Đăng Nhập</a>
+                                            <a href="#" class="btnModal btnRespon btnLoginForm" id="login">Đăng Nhập</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="inner" id="formQuenMK">
@@ -411,7 +425,6 @@
 
     <!-- File Owl-carousel -->
     <script src="../../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-
     <!-- File particles.min.js -->
     <script src="../../assets/Vendors/Particles/particles.min.js"></script>
     <script src="../../assets/Vendors/Particles/stats.js"></script>
@@ -419,6 +432,23 @@
 
     <!-- File JS -->
     <script src="../../assets/js/index.js"></script>
+
+    <!-- Script Valdidation -->
+    <script src="../../node_modules/validate.js/validate.min.js"></script>
+    <!-- Script common -->
+    <script src="../../assets/Vendors/common.js"></script>
+    <script src="../../assets/Vendors/jQueryNhapNhay/dist/js/NhapNhay.js"></script>
+    <!-- Model Người Dùng & Khóa Học-->
+    <script src="../Models/nguoidung.js"></script>
+    <script src="../Models/danhsachnguoidung.js"></script>
+    <script src="../Models/khoahoc.js"></script>
+    <script src="../Models/danhsachkhoahoc.js"></script>
+    <!-- Service Người Dùng & Service Khóa Học -->
+    <script src="../Services/nguoidungService.js"></script>
+    <script src="../Services/khoahocService.js"></script>
+    <!-- Script SweetAlert -->
+    <script src="../../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../Controllers/quanlyuser.js"></script>
 </body>
 
 </html>

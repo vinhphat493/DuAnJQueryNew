@@ -17,7 +17,10 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    <!-- CSS FONT-AWESOME -->
     <link rel="stylesheet" href="../../../../node_modules/font-awesome/css/font-awesome.min.css">
+    <!-- CSS PAGINATION -->
+    <link rel="stylesheet" href="../../../../assets/Vendors/Pagination/pagination.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -164,8 +167,8 @@
                                     <button class="btn btn-outline-dark my-2 my-sm-0">Search</button>
                                 </div>
                                 <div class="divBtn">
-                                    <button class="btn btn-info">Thêm khóa học</button>
-                                    <button class="btn btn-danger">Xóa khóa học</button>
+                                    <button class="btn btn-info" id="themKH">Thêm khóa học</button>
+                                    <button class="btn btn-danger" id="xoaKH">Xóa khóa học</button>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -173,45 +176,21 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th></th>
-                                                <th>Mã Khóa Học</th>
-                                                <th>Tên Khóa Học</th>
-                                                <th>Hình Ảnh</th>
-                                                <th>Lượt Xem</th>
-                                                <th>Người Tạo</th>
-                                                <th></th>
+                                                <th><input type="checkbox" id="allCheckBox"/></th>
+                                                <th width="150" height="70">Mã Khóa Học</th>
+                                                <th width="150" height="70">Tên Khóa Học</th>
+                                                <th width="150" height="70">Mô Tả</th>
+                                                <th width="150" height="70">Hình Ảnh</th>
+                                                <th width="150" height="70">Lượt Xem</th>
+                                                <th width="150" height="70">Người Tạo</th>
+                                                <th width="150" height="70"></th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>Deshmukh</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>Deshmukh</td>
-                                            </tr>
+                                        <tbody id="tbodyKH">
+                                        
                                         </tbody>
                                     </table>
+                                    <div id="pagination-container" class="pagination"></div>
                                 </div>
                             </div>
                         </div>
@@ -268,7 +247,9 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Người tạo</label>
-                                            <input id="nguoitao" class="form-control" placeholder="Nhập vào nguoi tạo">
+                                            <select id="nguoitao" class="form-control">
+                                                <option value="0" disabled selected>Chọn người tạo</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -323,7 +304,25 @@
     <script src="../assets/node_modules/peity/jquery.peity.min.js"></script>
     <script src="../assets/node_modules/peity/jquery.peity.init.js"></script>
 
-
+    <!-- Script Valdidation -->
+    <script src="../../../../node_modules/validate.js/validate.min.js"></script>
+    <!-- Script common -->
+    <script src="../../../../assets/Vendors/common.js"></script>
+    <script src="../../../../assets/Vendors/jQueryNhapNhay/dist/js/NhapNhay.js"></script>
+    <!-- Model Người Dùng & Khóa Học-->
+    <script src="../../../Models/nguoidung.js"></script>
+    <script src="../../../Models/danhsachnguoidung.js"></script>
+    <script src="../../../Models/khoahoc.js"></script>
+    <script src="../../../Models/danhsachkhoahoc.js"></script>
+    <!-- Service Người Dùng & Service Khóa Học -->
+    <script src="../../../Services/nguoidungService.js"></script>
+    <script src="../../../Services/khoahocService.js"></script>
+    <!-- Controller Quản Lý Người Dùng & Quản Lý Khóa Học-->
+    <script src="../../../Controllers/quanlykhoahoc.js"></script>
+    <!-- Script Pagination -->
+    <script src="../../../../assets/Vendors/Pagination/pagination.min.js"></script>
+    <!-- Script SweetAlert -->
+    <script src="../../../../node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

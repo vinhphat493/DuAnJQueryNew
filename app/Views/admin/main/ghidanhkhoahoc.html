@@ -19,6 +19,8 @@
     <link href="css/colors/default.css" id="theme" rel="stylesheet">
     <!-- font-awesome  -->
     <link rel="stylesheet" href="../../../../node_modules/font-awesome/css/font-awesome.min.css">
+    <!-- CSS PAGINATION -->
+    <link rel="stylesheet" href="../../../../assets/Vendors/Pagination/pagination.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -162,13 +164,13 @@
                                     <input class="form-control mr-sm-2 " type="text" id="timnguoidung" placeholder="Tìm người dùng">
                                     <button class="btn btn-outline-dark my-2 my-sm-0">Search</button>
                                 </div>
-                                
+
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <th>Tài Khoản</th>
                                                 <th>Họ & Tên</th>
                                                 <th>Email</th>
@@ -177,33 +179,11 @@
                                                 <th>Ghi Danh</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td>@Genelia</td>
-                                                <td>Deshmukh</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>Deshmukh</td>
-                                                <td>@Genelia</td>
-                                                <td>Deshmukh</td>
-                                            </tr>
+                                        <tbody id="tbodyNDHV">
+
                                         </tbody>
                                     </table>
+                                    <div id="pagination-container" class="pagination"></div>
                                 </div>
                             </div>
                         </div>
@@ -238,13 +218,16 @@
                             <!-- Modal body -->
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <select class="form-control" id="danhSachKH">
-                                        <option value="0" disabled selected="selected">Chọn khóa học...</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select>
+                                    <h5>Các Khoá Học Đã Đăng ký</h5>
+                                    <ul class="list-group" id="listKhoaHoc">
+                                    </ul>
+                                    <div class="d-flex justify-content-between mt-3">
+                                        <select class="form-control mr-4" id="danhSachKH">
+                                            <option value="0" disabled selected="selected">Chọn khóa học...</option>
+                                        </select>
+                                        <button class="btn btn-outline-primary p-2" id="btnGhiDanh">Ghi Danh</button>
+                                    </div>
+
                                 </div>
                             </div>
                             <!-- Modal footer -->
@@ -286,6 +269,25 @@
     <!-- jQuery peity -->
     <script src="../assets/node_modules/peity/jquery.peity.min.js"></script>
     <script src="../assets/node_modules/peity/jquery.peity.init.js"></script>
+    <!-- Script Valdidation -->
+    <script src="../../../../node_modules/validate.js/validate.min.js"></script>
+    <!-- Script common -->
+    <script src="../../../../assets/Vendors/common.js"></script>
+    <script src="../../../../assets/Vendors/jQueryNhapNhay/dist/js/NhapNhay.js"></script>
+    <!-- Model Người Dùng & Khóa Học-->
+    <script src="../../../Models/nguoidung.js"></script>
+    <script src="../../../Models/danhsachnguoidung.js"></script>
+    <script src="../../../Models/khoahoc.js"></script>
+    <script src="../../../Models/danhsachkhoahoc.js"></script>
+    <!-- Service Người Dùng & Service Khóa Học -->
+    <script src="../../../Services/nguoidungService.js"></script>
+    <script src="../../../Services/khoahocService.js"></script>
+    <!-- Controller Quản Lý Người Dùng & Quản Lý Khóa Học-->
+    <script src="../../../Controllers/quanlyghidanh.js"></script>
+    <!-- Script Pagination -->
+    <script src="../../../../assets/Vendors/Pagination/pagination.min.js"></script>
+    <!-- Script SweetAlert -->
+    <script src="../../../../node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>
