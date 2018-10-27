@@ -1,12 +1,14 @@
 #myModal{
     .modal-dialog{
-        transform: translate(0,30%)    ;
-        -webkit-transform: translate(0,30%)    ;
-        -moz-transform: translate(0,30%)    ;
-        -ms-transform: translate(0,30%)    ;
-        -o-transform: translate(0,30%)    ;
+        // width: 900px;
+        transform: translate(0,18%)    ;
+        -webkit-transform: translate(0,18%)    ;
+        -moz-transform: translate(0,18%)    ;
+        -ms-transform: translate(0,18%)    ;
+        -o-transform: translate(0,18%)    ;
+        
         .row{
-            height: 350px;
+            height: 450px;
             .left{
                 position: relative;
                 padding: 0;
@@ -77,44 +79,63 @@
                     .formQuenMK-content{
                         padding : 0 $pd-2;
                     }
+                    #divError{
+                        background-color: $bgLight;
+                        h5{
+                            color: $colorHover;
+                        }
+                    }
                     .rightInput{
-                        border: 1px solid $colorGray;
-                        border-radius: 5px                                            ;
-                        -webkit-border-radius: 5px                                            ;
-                        -moz-border-radius: 5px                                            ;
-                        -ms-border-radius: 5px                                            ;
-                        -o-border-radius: 5px                             ;
-                        padding-left: $pd-1;  
-                        &:nth-child(3){
-                            padding-left: $pd-2;
-                        }
-                        i{
-                            font-size: $fs-2;  
-                        }
+                        height: 50px;
+                        background-color: transparent;
+                        margin-bottom: 40px;
+                        padding: $pd-05 $pd-1 $pd-05 $pd-1;
+                        border-radius: 10px                    ;
+                        -webkit-border-radius: 10px                    ;
+                        -moz-border-radius: 10px                    ;
+                        -ms-border-radius: 10px                    ;
+                        -o-border-radius: 10px                    ;
+                        border: 1px solid $colorDark;
                         input{
-                            border:none;
-                            display: inline;
+                            float: right;
+                            display: inline-block;
+                            border: 0!important;
+                            outline: 0!important;
+                            box-shadow: none;
+                            color :#2f2f2f;
+                            background-color: transparent;
                             width: 90%;
-                            height: 40px;
-                            font-size: $fs-2; 
-                            &:focus{
-                                box-shadow: unset;
-                            }
                         }
-                        input[type="password"]{
-                            padding-left: 20px;
-                        }   
+                        span{
+                            display: inline-block;
+                            float: left;
+                            line-height: 37px;
+                            padding-left: $pd-05;
+                            font-size: 20px;
+                        }
+                        .error{
+                            display: inline-block;
+                            margin-top: 5px;
+                            color: $colorHover;
+                            font-size: 1rem;
+                        }
+
+                    }
+                    .divPassword{
+                        // margin-bottom: 35px;
                     }
                     #right-QuenMK{
                         margin-left: $mg-2;
                     }
                     .rightFooterFirst{
+                        padding-top: 10px;
                         @include MediaQuery(992px){
-                            display: none;
+                            display: block;
                         }
                     }
                     .rightFooter{
                         display: none;
+                        
                         @include MediaQuery(992px){
                             display: block!important;
                         }

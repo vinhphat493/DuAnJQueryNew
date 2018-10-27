@@ -46,7 +46,7 @@ header, nav, aside, section, article, main, footer {
   background: #D4B03B;
   opacity: 0.5;
   cursor: pointer;
-  padding: 6px 12px;
+  padding: 10px 13px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -177,7 +177,7 @@ header, nav, aside, section, article, main, footer {
           margin-left: 20px; }
         @media screen and (max-width: 992px) {
           #myModal .modal-dialog .row .right .inner .rightFooterFirst {
-            display: none; } }
+            display: block; } }
         #myModal .modal-dialog .row .right .inner .rightFooter {
           display: none; }
           @media screen and (max-width: 992px) {
@@ -187,16 +187,23 @@ header, nav, aside, section, article, main, footer {
             height: unset; }
             #myModal .modal-dialog .row .right .inner .rightFooter .rightFooterRow .btnRespon {
               padding: 10px 20px; }
-
-.displayBlock {
-  display: block; }
-
-.displayNone {
-  display: none; }
+  #myModal .modal-dialog #modalFooter {
+    display: none; }
+    @media screen and (max-width: 992px) {
+      #myModal .modal-dialog #modalFooter {
+        display: block;
+        background-color: #acacac; } }
+    #myModal .modal-dialog #modalFooter #signUpRespon {
+      background-color: transparent;
+      border: 1px solid #2e373d;
+      color: #2e373d; }
+      #myModal .modal-dialog #modalFooter #signUpRespon:hover {
+        color: #bb2035; }
 
 #header {
   background-color: #fff;
   z-index: 100;
+  box-shadow: 0 5px #fbfbfb;
   width: 100%; }
   @media screen and (max-width: 1200px) {
     #header .navbar .navbar-brand {
@@ -222,6 +229,8 @@ header, nav, aside, section, article, main, footer {
         font-size: 0.8rem; } }
     #header .nav-link:hover {
       color: #bb2035; }
+  #header .active {
+    color: #bb2035; }
 
 #pageSlider {
   position: relative;
@@ -271,7 +280,7 @@ header, nav, aside, section, article, main, footer {
     #diemuuviet .diemuuvietItem .block .number {
       position: absolute;
       left: 1%;
-      top: -34px;
+      top: -12px;
       font-style: italic;
       color: #454545;
       font-weight: 800;
@@ -677,5 +686,97 @@ header, nav, aside, section, article, main, footer {
 .gt_Part3Right .p2:nth-child(2), .gt_Part3Right .p2:nth-child(3) {
   color: brown;
   margin-bottom: 0; }
+
+.user .row .title-User {
+  margin: 0 auto;
+  padding-top: 30px;
+  z-index: 100; }
+  .user .row .title-User .userImg {
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #2e373d;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    overflow: hidden; }
+  .user .row .title-User h1 {
+    margin-top: 10px;
+    font-size: 2rem; }
+@media screen and (max-width: 768px) {
+  .user .content {
+    padding: 0; } }
+.user .content #home {
+  height: 600px; }
+.user .content #listKH .khoahocItem .imgKhoaHoc {
+  width: 350px;
+  height: 250px; }
+  .user .content #listKH .khoahocItem .imgKhoaHoc img {
+    width: 100%;
+    height: 100%; }
+.user .content #ttTaiKhoan .row {
+  padding-bottom: 100px; }
+  .user .content #ttTaiKhoan .row .form-group {
+    margin-bottom: 60px; }
+    .user .content #ttTaiKhoan .row .form-group input {
+      display: inline;
+      width: 60%;
+      float: right;
+      outline: none; }
+      .user .content #ttTaiKhoan .row .form-group input:focus {
+        box-shadow: unset; }
+  .user .content #ttTaiKhoan .row .right .form-group:nth-child(2) {
+    padding-right: 160px; }
+    @media screen and (max-width: 1200px) {
+      .user .content #ttTaiKhoan .row .right .form-group:nth-child(2) {
+        padding-right: 110px; } }
+    @media screen and (max-width: 992px) {
+      .user .content #ttTaiKhoan .row .right .form-group:nth-child(2) {
+        padding-right: 35px; } }
+    @media screen and (max-width: 768px) {
+      .user .content #ttTaiKhoan .row .right .form-group:nth-child(2) {
+        padding-right: 150px; } }
+    .user .content #ttTaiKhoan .row .right .form-group:nth-child(2) .form-check {
+      display: inline;
+      float: right;
+      margin: 0 20px; }
+.user .content #doiMKUser .row {
+  padding-bottom: 100px; }
+  .user .content #doiMKUser .row .form-group {
+    margin-bottom: 60px; }
+    .user .content #doiMKUser .row .form-group input {
+      display: inline;
+      width: 60%;
+      float: right;
+      outline: none; }
+      .user .content #doiMKUser .row .form-group input:focus {
+        box-shadow: unset; }
+
+#pageLienHe {
+  background-color: #f8f9fa;
+  padding: 30px; }
+  #pageLienHe .left h1 {
+    color: #bb2035;
+    text-align: center;
+    word-spacing: 10px;
+    letter-spacing: 10px;
+    position: relative; }
+    #pageLienHe .left h1::before {
+      content: "";
+      width: 30%;
+      height: 5px;
+      background-color: #bb2035;
+      position: absolute;
+      bottom: -35%;
+      left: 32%; }
+  #pageLienHe .left .input {
+    max-width: 100%; }
+    #pageLienHe .left .input .input__field {
+      padding-top: 20px;
+      padding-bottom: 20px; }
+  #pageLienHe .left #textTuVan {
+    width: 100% !important; }
 
 /*# sourceMappingURL=main.css.map */

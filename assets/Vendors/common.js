@@ -29,4 +29,6 @@ function commonService() {
 
         return slug;
     }
+    
 }
+

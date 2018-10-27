@@ -54,4 +54,11 @@ function ServiceKhoaHoc (){
         })
         
     }
+    this.ChiTietKhoaHoc = function(maKH) {
+        var apiURL = `http://sv.myclass.vn/api/QuanLyTrungTam/ChiTietKhoaHoc/${maKH}`;
+        return $.ajax({
+            url : apiURL,
+            type : "GET"
+        })
+    }
 }

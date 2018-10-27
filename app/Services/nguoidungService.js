@@ -55,4 +55,13 @@ function ServiceNguoiDung(){
             type:"GET"
         })
     }
+    this.DangKy = (nguoiDung)=>{
+        var apiURL = "http://sv.myclass.vn/api/QuanLyTrungTam/DangKy"
+        return $.ajax({
+            url:apiURL,
+            type : 'POST',
+            dataType:'json',
+            data : nguoiDung
+        })
+    }
 }

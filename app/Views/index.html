@@ -56,8 +56,8 @@
 
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#"><i class="fa fa-cog mr-2"></i>Cài Đặt</a>
-                            <a class="dropdown-item" href="#"><i class="fa fa-sign-out mr-2"></i>Thoát</a>
+                            <a class="dropdown-item" href="./user.html" id="ttUser"><i class="fa fa-cog mr-2"></i>Cài Đặt</a>
+                            <a class="dropdown-item" href="#" id="logOut"><i class="fa fa-sign-out mr-2"></i>Thoát</a>
                         </div>
                     </li>
                 </ul>
@@ -253,9 +253,9 @@
                         <div class="col-lg-6 left">
                             <div class="bgOver"></div>
                             <div class="inner text-center">
-                                <h3>Bạn chưa có tài khoản CyberSoft</h3>
+                                <h3 id="title-left">Bạn chưa có tài khoản CyberSoft</h3>
                                 <div class="form-group text-center mt-4">
-                                    <a href="#" class="btnModal btnLeft" id="signUpUser">Đăng Ký</a>
+                                    <a href="#" class="btnModal btnLeft btnSignUp" id="signUpUser">Đăng Ký</a>
                                 </div>
                                 <div class="form-group text-center mt-4">
                                     <a href="#" class="btnModal btnLeft" id="loginUser">Đăng Nhập</a>
@@ -268,43 +268,41 @@
                             </a>
                             <div class="inner" id="formLogin">
                                 <h2>Đăng Nhập</h2>
-                                <div class="form-group bg-secondary p-2" id="divError">
-                                    <h5 id="errorText" class="text-danger"></h5>
-                                </div>
-                                <div class="form-group rightInput">
-                                    <span>
-                                        <i class="fa fa-user-circle-o"></i>
-                                    </span>
-                                    <input type="text" autofocus="flase" class="form-control" placeholder="Tên Đăng Nhập"
-                                        id="idUser">
-                                </div>
-                                <div class="form-group rightInput">
-                                    <span>
-                                        <i class="fa fa-lock"></i>
-                                    </span>
-                                    <input type="password" placeholder="Mật Khẩu" class="form-control" id="pwdUser">
-                                </div>
-                                <div class="right-rememberCheck">
-                                    <div class="form-check-inline" id="right-Check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="">Ghi nhớ tài khoản
-                                        </label>
+                                <form action="" id="formLoginVal">
+                                    <div class="form-group p-2" id="divError">
+                                        <h5 id="errorText"></h5>
                                     </div>
-                                    <a href="#" id="right-QuenMK">
-                                        Quên mật khẩu ?
-                                    </a>
-                                </div>
-                                <div class="form-group text-center mt-4 rightFooterFirst">
-                                    <a href="#" class="btnModal btnRight" id="login">Đăng Nhập</a>
-                                </div>
-
-                                <!-- <div class="rightFooter container">
-                                    <div class="row rightFooterRow">
-                                        <div class="form-group text-center mt-5 col-12">
-                                            <a href="#" class="btnModal btnRespon btnLoginForm" id="login">Đăng Nhập</a>
+                                    <div class="form-group rightInput divIdUser">
+                                        <span>
+                                            <i class="fa fa-user-circle-o"></i>
+                                        </span>
+                                        <input type="text" autofocus="flase" class="form-control" placeholder="Tên Đăng Nhập"
+                                            id="idUser" name="idUser" required>
+                                        <span class="error" id="errorID">Vui lòng nhập tài khoản</span>
+                                    </div>
+                                    <div class="form-group rightInput divPassword">
+                                        <span>
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                        <input type="password" placeholder="Mật Khẩu" class="form-control" id="pwdUser"
+                                            required>
+                                        <span class="error" id="errorPass">Vui lòng nhập mật khẩu</span>
+                                    </div>
+                                    <div class="right-rememberCheck">
+                                        <div class="form-check-inline" id="right-Check">
+                                            <input type="checkbox" id="rememberID" class="form-check-input" value="">
+                                            <label class="form-check-label">
+                                                Ghi nhớ tài khoản
+                                            </label>
                                         </div>
+                                        <a href="#" id="right-QuenMK">
+                                            Quên mật khẩu ?
+                                        </a>
                                     </div>
-                                </div> -->
+                                    <div class="form-group text-center mt-4 rightFooterFirst">
+                                        <a href="#" class="btnModal btnRight" id="login">Đăng Nhập</a>
+                                    </div>
+                                </form>
                             </div>
 
                             <div class="inner" id="formQuenMK">
@@ -333,25 +331,28 @@
                                     </span>
                                     <input type="text" autofocus="flase" class="form-control" placeholder="Tên Đăng Nhập"
                                         id="idUserNew">
+                                    <span class="error" id="error-idUserNew">Tên đăng nhập không được để trống!</span>
                                 </div>
-                                <div class="form-group rightInput">
+                                <!-- <div class="form-group rightInput">
                                     <span>
                                         <i class="fa fa-envelope"></i>
                                     </span>
                                     <input type="text" autofocus="flase" class="form-control" placeholder="Email của bạn"
                                         id="emailUser">
-                                </div>
+                                </div> -->
                                 <div class="form-group rightInput">
                                     <span>
                                         <i class="fa fa-lock"></i>
                                     </span>
                                     <input type="password" placeholder="Mật Khẩu" class="form-control" id="pwdUserNew">
+                                    <span class="error" id="error-pwdUserNew">Mật khẩu không được để trống!</span>
                                 </div>
                                 <div class="form-group rightInput">
                                     <span>
                                         <i class="fa fa-lock"></i>
                                     </span>
                                     <input type="password" placeholder="Nhập Lại Mật Khẩu" class="form-control" id="pwdUserNewP2">
+                                    <span class="error" id="error-pwdUserNewP2">Mật khẩu không được để trống!</span>
                                 </div>
                                 <div class="form-group text-center mt-4 rightFooterFirst" id="divBtnSignUp">
                                     <a href="#" class="btnModal btnRight" id="signUp">Đăng Ký</a>
@@ -365,13 +366,17 @@
                     <div class="form-group text-center col-12">
                         <p class="mb-0 mt-2">Nếu Chưa Có Tài Khoản</p>
                         <i class="fa fa-hand-o-down"></i>
-                        <a href="#" class="btnModal btnRespon d-block" id="signUpRespon">Đăng Ký</a>
+                        <a href="#" class="btnModal btnRespon d-block btnSignUp" id="signUpRespon">Đăng Ký</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- End modal form Login & SignUp -->
+
+    <!-- link admin -->
+    <a href="./admin/main/index.html" class="d-none" id="linkAdmin">Admin Link</a>
+    <!-- link admin -->
 
     <!-- BEGIN FOOTER -->
     <footer id="footer" class="pt-5 mt-5">
@@ -422,21 +427,19 @@
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <!-- Script validation -->
+    <script src="../../node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
     <!-- File Owl-carousel -->
     <script src="../../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
     <!-- File particles.min.js -->
     <script src="../../assets/Vendors/Particles/particles.min.js"></script>
     <script src="../../assets/Vendors/Particles/stats.js"></script>
     <script src="../../assets/Vendors/Particles/app.js"></script>
-
     <!-- File JS -->
     <script src="../../assets/js/index.js"></script>
-
-    <!-- Script Valdidation -->
-    <script src="../../node_modules/validate.js/validate.min.js"></script>
     <!-- Script common -->
     <script src="../../assets/Vendors/common.js"></script>
+    <script src="../../assets//Vendors/kiemtraForm.js"></script>
     <script src="../../assets/Vendors/jQueryNhapNhay/dist/js/NhapNhay.js"></script>
     <!-- Model Người Dùng & Khóa Học-->
     <script src="../Models/nguoidung.js"></script>
@@ -448,6 +451,7 @@
     <script src="../Services/khoahocService.js"></script>
     <!-- Script SweetAlert -->
     <script src="../../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Script quản lý user HV -->
     <script src="../Controllers/quanlyuser.js"></script>
 </body>
 

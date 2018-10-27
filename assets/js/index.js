@@ -22,6 +22,7 @@ $("#btnLogin").click(function () {
     $("#formSignUP").hide();
     $("#formLogin").show();
     $("#signUpUser").show();
+    $("#login").show();
 })
 
 //Hàm xử lý khi click Quên mật khẩu
@@ -37,6 +38,7 @@ $("#signUpUser").on("click", () => {
     $("#formLogin").hide();
     $("#formSignUP").show();
     $("#formQuenMK").hide();
+    $("#title-left").html("Bạn đã có tài khoản CyberSoft")
 })
 //------------------------//
 
@@ -54,6 +56,7 @@ $("#signUpRespon").on("click", () => {
     $("#formLogin").hide();
     $("#formQuenMK").hide();
     $("#formSignUP").show();
+    $("#modalFooter").hide();
 })
 
 //Hàm xử lý khi click nut LoginRespon
@@ -62,6 +65,10 @@ $("#loginRespon").on("click", () => {
     $("#formQuenMK").hide();
     $("#formSignUP").hide();
 })
+
+//Hàm hide tenUserLogin
+$("#doneLogin").hide();
+$("#divError").fadeOut();
 
 //Owl-carousel
 $(document).ready(function () {
