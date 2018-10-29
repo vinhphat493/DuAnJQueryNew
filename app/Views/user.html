@@ -107,89 +107,14 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div id="home" class="container tab-pane pt-5 text-center active"><br>
-                            <img src="../../../assets/img/hinhnenUser.svg" alt="">
+                            <img src="../../assets/img/logo.png" alt="">
                             <h1 class="pt-5 display-4">Wellcome to CyberSoft</h1>
                             <p>Tiếp tục hành trình của bạn nào...</p>
                         </div>
                         <div id="listKH" class="container tab-pane fade"><br>
                             <h3 class="text-center py-5" id="titleDSKH">Những khóa học bạn đã ghi danh</h3>
                             <div class="row" id="dskh">
-                                <div class="col-md-4 col-sm-6 col-12 pb-5 khoahocItem">
-                                    <div class="card">
-                                        <div class="imgKhoaHoc">
-                                            <img class="card-img-top" src="../../../assets/img/frontEnd.jpg" alt="Card image">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">John Doe</h4>
-                                            <p class="card-text">Some example text.</p>
-                                            <a href="chitietkhoahoc.html" class="btn btn-primary">Xem Chi Tiết</a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-12 pb-5 khoahocItem">
-                                    <div class="card">
-                                        <div class="imgKhoaHoc">
-                                            <img class="card-img-top" src="../../../assets/img/fullJS.png" alt="Card image">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">John Doe</h4>
-                                            <p class="card-text">Some example text.</p>
-                                            <a href="chitietkhoahoc.html" class="btn btn-primary">Xem Chi Tiết</a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-12 pb-5 khoahocItem">
-                                    <div class="card">
-                                        <div class="imgKhoaHoc">
-                                            <img class="card-img-top" src="../../../assets/img/nodejs.png" alt="Card image">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">John Doe</h4>
-                                            <p class="card-text">Some example text.</p>
-                                            <a href="chitietkhoahoc.html" class="btn btn-primary">Xem Chi Tiết</a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-12 pb-5 khoahocItem">
-                                    <div class="card">
-                                        <div class="imgKhoaHoc">
-                                            <img class="card-img-top" src="../../../assets/img/reactjs.png" alt="Card image">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">John Doe</h4>
-                                            <p class="card-text">Some example text.</p>
-                                            <a href="chitietkhoahoc.html" class="btn btn-primary">Xem Chi Tiết</a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-12 pb-5 khoahocItem">
-                                    <div class="card">
-                                        <div class="imgKhoaHoc">
-                                            <img class="card-img-top" src="../../../assets/img/reactNative.png" alt="Card image">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">John Doe</h4>
-                                            <p class="card-text">Some example text.</p>
-                                            <a href="chitietkhoahoc.html" class="btn btn-primary">Xem Chi Tiết</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-12 pb-5 khoahocItem">
-                                    <div class="card">
-                                        <div class="imgKhoaHoc">
-                                            <img class="card-img-top" src="../../../assets/img/android.png" alt="Card image">
-                                        </div>
-                                        <div class="card-body">
-                                            <h4 class="card-title">John Doe</h4>
-                                            <p class="card-text">Some example text.</p>
-                                            <a href="chitietkhoahoc.html" class="btn btn-primary">Xem Chi Tiết</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h4 class="text-center">Hiện bạn chưa ghi danh bất kỳ khóa học nào</h4>
                             </div>
                         </div>
                         <div id="ttTaiKhoan" class="container tab-pane fade">
@@ -210,7 +135,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="btnSave text-center mt-5">
-                                        <a href="#" class="btn btnLuuTT" id="luuTTND">Lưu Lại</a>
+                                        <a href="#ttTaiKhoan" class="btn btnLuuTT" id="luuTTND">Lưu Lại</a>
                                     </div>
                                 </div>
                             </div>
@@ -218,6 +143,8 @@
                         <div id="doiMKUser" class="container tab-pane fade"><br>
                             <div class="row">
                                 <div class="col-md-6 pt-5">
+                                    <div class="form-group" id="divError" style="color:brown;background-color: whitesmoke;">
+                                    </div>
                                     <div class="form-group">
                                         <label for="usr">Mật khẩu cũ</label>
                                         <input type="password" class="form-control" id="pwdUserOld" placeholder="Mật khẩu cũ">
@@ -232,8 +159,8 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="btnSave text-center mt-5" id="doiMK">
-                                        <a href="#" class="btn btnLuuTT">Lưu Lại</a>
+                                    <div class="btnSave text-center mt-5" >
+                                        <a href="#doiMKUser" class="btn btnLuuTT" id="doiMK">Lưu Lại</a>
                                     </div>
                                 </div>
                             </div>
@@ -268,7 +195,7 @@
                     <ul class="thongtin">
                         <li><a href="./index.html">Trang chủ</a></li>
                         <li><a href="./layouts/gioithieu.html">Giới thiệu</a></li>
-                        <li><a href="./layouts/danhsachkhoahoc.html" >Danh sách khóa học</a></li>
+                        <li><a href="./layouts/danhsachkhoahoc.html">Danh sách khóa học</a></li>
                         <li><a href="./layouts/lienhe.html">Liên hệ</a></li>
                     </ul>
                 </div>
@@ -300,11 +227,11 @@
     <script src="../../assets/Vendors/jquery-ui/jquery-ui.min.js"></script>
     <script>
         $(function () {
-          $("#ngaysinh").datepicker({
-            dateFormat: "mm/dd/yy"
-          });
+            $("#ngaysinh").datepicker({
+                dateFormat: "mm/dd/yy"
+            });
         });
-      </script>
+    </script>
     <!-- File Owl-carousel -->
     <script src="../../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
 
@@ -315,7 +242,7 @@
 
     <!-- File JS -->
     <script src="../../assets/js/index.js"></script>
-    
+
     <!-- Script common -->
     <script src="../../assets/Vendors/common.js"></script>
     <script src="../../assets/Vendors/kiemtraForm.js"></script>

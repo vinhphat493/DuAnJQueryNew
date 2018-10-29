@@ -22,7 +22,7 @@ $(document).ready(function () {
         })
     LayTTNDDaluu("NguoiDung");
 
-    //Hàm lấy dữ liệu khóa học người dùng mới đăng nhập hiện thị lên
+    //Hàm lấy dữ liệu thông tin người dùng mới đăng nhập hiện thị lên
     function LayTTNDDaluu(keyLocal) {
         var nguoiDung = LayDuLieuLocal(keyLocal);
         if (nguoiDung != false) {
@@ -30,8 +30,8 @@ $(document).ready(function () {
             $("#doneLogin").show();
             var tenNguoiDungChuCaiDau = nguoiDung.HoTen.substring(0, 1).toUpperCase();
             var tenNguoiDung = nguoiDung.HoTen.substring(1);
-            $("#tenUserLogin").html(tenNguoiDungChuCaiDau+tenNguoiDung);
-            $("#nameUser").html(tenNguoiDungChuCaiDau+tenNguoiDung);
+            $("#tenUserLogin").html(tenNguoiDungChuCaiDau + tenNguoiDung);
+            $("#nameUser").html(tenNguoiDungChuCaiDau + tenNguoiDung);
             $("#name").val(nguoiDung.HoTen);
             $("#email").val(nguoiDung.Email);
             $("#soDT").val(nguoiDung.SoDT);
@@ -67,8 +67,6 @@ $(document).ready(function () {
             LayKhoaHocDayDu();
         }
     }
-
-
 
     //Reset form đăng nhập khi click vào đăng nhập trên trang chủ
     $("#btnLogin").click(function () {
@@ -228,20 +226,20 @@ $(document).ready(function () {
     //Hàm sửa thông tin người dùng
     $("#luuTTND").click(function () {
         var nguoidungDangDangNhap = LayDuLieuLocal("NguoiDung");
-        console.log(nguoidungDangDangNhap);
+        // console.log(nguoidungDangDangNhap);
         var ttNguoiDung = DSND.LayThongTinNguoiDung(nguoidungDangDangNhap.TaiKhoan);
-        ttNguoiDung.HoTen= $("#name").val();
+        ttNguoiDung.HoTen = $("#name").val();
         ttNguoiDung.Email = $("#email").val();
-        ttNguoiDung.SoDT = $("#soDT").val();  
+        ttNguoiDung.SoDT = $("#soDT").val();
         svNguoiDung.CapNhatThongTinNguoiDung(ttNguoiDung).done((ketqua) => {
             if (ketqua) {
-                ttNguoiDung.MaKhau="";
-                swal({  
+                ttNguoiDung.MatKhau = "";
+                swal({
                     title: "Cập nhập thông tin thành công!",
                     icon: "success",
                 });
                 setTimeout(() => {
-                    LuuDuLieuVaoLocal("NguoiDung",ttNguoiDung)
+                    LuuDuLieuVaoLocal("NguoiDung", ttNguoiDung)
                     location.reload();//reload lại trang
                 }, 1000);
             };
@@ -251,21 +249,77 @@ $(document).ready(function () {
     })
 
     //Hàm đổi mật khẩu
-    $("#doiMK").click(()=>{
+    $("#doiMK").click(function () {
         var passOld = $("#pwdUserOld").val();
         var passNew = $("#pwdUserNew").val();
         var passNew2 = $("#pwdUserNew2").val();
         var nguoidungDangDangNhap = LayDuLieuLocal("NguoiDung");
         var ttNguoiDung = DSND.LayThongTinNguoiDung(nguoidungDangDangNhap.TaiKhoan);
-        if(ttNguoiDung == passOld){
+        if (kiemtra.getKTRong(passOld)) {
+            if (kiemtra.getKTDodai(passOld, 8, 20)) {
+                if (kiemtra.getKTRong(passNew)) {
+                    if (kiemtra.getKTDodai(passNew, 8, 20)) {
+                        if (ttNguoiDung.MatKhau == passOld) {
+                            if (passNew == passNew2) {
+                                $("#divError").fadeOut();
+                                ttNguoiDung.MatKhau = passNew;
+                                swal({
+                                    title: "Bạn có chắc chắn muốn đổi mật khẩu không ?",
+                                    icon: "warning",
+                                    buttons: true,
+                                    dangerMode: true,
+                                })
+                                    .then((willDelete) => {
+                                        if (willDelete) {
+                                            svNguoiDung.CapNhatThongTinNguoiDung(ttNguoiDung).done((ketqua) => {
+                                                if (ketqua) {
+                                                    console.log(ketqua);
+                                                    swal("Chúc mừng ! Bạn đã đổi mật khẩu thành công. Bạn vui lòng đăng nhập lại hệ thống!", {
+                                                        icon: "success",
+                                                      });
+                                                    setTimeout(() => {
+                                                        localStorage.clear();
+                                                        window.location.href = "./index.html";
+                                                    }, 2000);
+                                                }
+                                            }).fail((loi) => {
+                                                console.log("loi");
+                                                swal({
+                                                    title: "Bị lỗi hệ thống!",
+                                                    text: "Tạm thời không đổi mật khẩu được!",
+                                                    icon: "warring",
+                                                });
+                                            })
+                                        } else {
+                                            swal("Bạn đã từ chối đổi mật khẩu!");
+                                        }
+                                    });
 
+                            } else {
+                                $("#divError").fadeIn().html("Mật khẩu xác nhận không chính xác !");
+                            }
+                        } else {
+                            $("#divError").fadeIn().html("Mật khẩu cũ không chính xác !");
+                        }
+                    } else {
+                        $("#divError").fadeIn().html("Mật khẩu mới phải từ 8 đến 20 kí tự !");
+                    }
+                } else {
+                    $("#divError").fadeIn().html("Mật khẩu mới không được để trống !");
+                }
+            } else {
+                $("#divError").fadeIn().html("Mật khẩu cũ phải từ 8 đến 20 kí tự !");
+            }
+        } else {
+            $("#divError").fadeIn().html("Mật khẩu cũ không được để trống !");
         }
+
     })
 
     //Hàm lấy chi tiết các khóa học
     function LayKhoaHocDayDu() {
         var mangKHDAGD = LayDuLieuLocal("MaKhoaHoc");
-        var mangKH = [];
+        // var mangKH = [];
         var divKH = "";
         if (mangKHDAGD != false) {
             for (var i = 0; i < mangKHDAGD.length; i++) {

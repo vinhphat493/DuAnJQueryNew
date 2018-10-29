@@ -18,49 +18,49 @@
     </button>
     <!-- BEGIN HEADER -->
     <header id="header">
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="index.html">
-                <img src="../../assets/img/logo.png" alt="hinhLogo">
-            </a>
-            <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-                aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2 " type="text" id="timkhoahoc" placeholder="Tìm khóa học">
-                    <button class="btn btn-outline-dark my-2 my-sm-0">Search</button>
-                </form>
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Trang Chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gioithieu.html">Giới Thiệu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="danhsachkhoahoc" href="danhsachkhoahoc.html">Khóa Học</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lienhe.html">Liên Hệ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="btnLogin" href="#" id="dontLogin">Đăng Nhập</a>
-                    </li>
-                    <li class="nav-item dropdown" id="doneLogin">
-                        <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false" id="tenUserLogin">
-
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="./user.html"><i class="fa fa-cog mr-2"></i>Cài Đặt</a>
-                            <a class="dropdown-item" href="#" id="logOut"><i class="fa fa-sign-out mr-2"></i>Thoát</a>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img src="../../assets/img/logo.png" alt="hinhLogo">
+                </a>
+                <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2 " type="text" id="timkhoahoc" placeholder="Tìm khóa học">
+                        <button class="btn btn-outline-dark my-2 my-sm-0">Search</button>
+                    </form>
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./layouts/gioithieu.html">Giới Thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="danhsachkhoahoc" href="./layouts/danhsachkhoahoc.html">Khóa Học</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="layouts/lienhe.html">Liên Hệ</a>
+                        </li>
+                        <li class="nav-item" id="dontLogin">
+                            <a class="nav-link" id="btnLogin" href="#">Đăng Nhập</a>
+                        </li>
+                        <li class="nav-item dropdown" id="doneLogin">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" id="tenUserLogin">
+    
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="./user.html" id="ttUser"><i class="fa fa-cog mr-2"></i>Cài Đặt</a>
+                                <a class="dropdown-item" href="#" id="logOut"><i class="fa fa-sign-out mr-2"></i>Thoát</a>
+                            </div>
+                        </li>
+                    </ul>
+    
+                </div>
+            </nav>
     </header>
     <!-- END HEADER -->
 
@@ -75,7 +75,7 @@
     <!-- END SLIDER -->
 
     <!-- BEGIN MAIN -->
-    <main id="mainContent" style="padding-top:100px;">
+    <main id="mainContent" style="padding-top:10px;">
         <section id="chitietkhoahoc">
             <div class="title-chitietkhoahoc">
                 <h1>Front-End: Cốt lõi thiết kế website với HTML, CSS, JavaScript , Jquery, Responsive, Bootstrap, dàn
@@ -218,132 +218,130 @@
 
     <!-- Begin modal form Login & SignUp -->
     <button type="button" id="modalDangNhap" class="btn btn-primary d-none" data-toggle="modal" data-target="#myModal">
-        Open modal
+            Open modal
     </button>
-
+    
     <!-- The Modal -->
     <div class="modal fade" id="myModal">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <!-- Modal form Login/SignUp -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 left">
-                            <div class="bgOver"></div>
-                            <div class="inner text-center">
-                                <h3>Bạn chưa có tài khoản CyberSoft</h3>
-                                <div class="form-group text-center mt-4">
-                                    <a href="#" class="btnModal btnLeft" id="signUpUser">Đăng Ký</a>
-                                </div>
-                                <div class="form-group text-center mt-4">
-                                    <a href="#" class="btnModal btnLeft" id="loginUser">Đăng Nhập</a>
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Modal form Login/SignUp -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 left">
+                                <div class="bgOver"></div>
+                                <div class="inner text-center">
+                                    <h3 id="title-left">Bạn chưa có tài khoản CyberSoft</h3>
+                                    <div class="form-group text-center mt-4">
+                                        <a href="#" class="btnModal btnLeft btnSignUp" id="signUpUser">Đăng Ký</a>
+                                    </div>
+                                    <div class="form-group text-center mt-4">
+                                        <a href="#" class="btnModal btnLeft" id="loginUser">Đăng Nhập</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6 right">
-                            <a href="#" class="closeModal" data-dismiss="modal">
-                                <i class="fa fa-times"></i>
-                            </a>
-                            <div class="inner" id="formLogin">
-                                <h2>Đăng Nhập</h2>
-                                <div class="form-group rightInput">
-                                    <span>
-                                        <i class="fa fa-user-circle-o"></i>
-                                    </span>
-                                    <input type="text" autofocus="flase" class="form-control" placeholder="Tên Đăng Nhập"
-                                        id="idUser">
-                                </div>
-                                <div class="form-group rightInput">
-                                    <span>
-                                        <i class="fa fa-lock"></i>
-                                    </span>
-                                    <input type="password" placeholder="Mật Khẩu" class="form-control" id="pwdUser">
-                                </div>
-                                <div class="right-rememberCheck">
-                                    <div class="form-check-inline" id="right-Check">
-                                        <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" value="">Ghi nhớ tài khoản
-                                        </label>
-                                    </div>
-                                    <a href="#" id="right-QuenMK">
-                                        Quên mật khẩu ?
-                                    </a>
-                                </div>
-                                <div class="form-group text-center mt-4 rightFooterFirst">
-                                    <a href="#" class="btnModal btnRight" id="login">Đăng Nhập</a>
-                                </div>
-                                <div class="rightFooter container">
-                                    <div class="row rightFooterRow">
-                                        <div class="form-group text-center mt-5 col-12">
-                                            <a href="#" class="btnModal btnRespon" id="loginRespon">Đăng Nhập</a>
+                            <div class="col-lg-6 right">
+                                <a href="#" class="closeModal" data-dismiss="modal">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                                <div class="inner" id="formLogin">
+                                    <h2>Đăng Nhập</h2>
+                                    <form action="" id="formLoginVal">
+                                        <div class="form-group p-2" id="divError">
+                                            <h5 id="errorText"></h5>
                                         </div>
+                                        <div class="form-group rightInput divIdUser">
+                                            <span>
+                                                <i class="fa fa-user-circle-o"></i>
+                                            </span>
+                                            <input type="text" autofocus="flase" class="form-control" placeholder="Tên Đăng Nhập"
+                                                id="idUser" name="idUser" required>
+                                            <span class="error" id="errorID">Vui lòng nhập tài khoản</span>
+                                        </div>
+                                        <div class="form-group rightInput divPassword">
+                                            <span>
+                                                <i class="fa fa-lock"></i>
+                                            </span>
+                                            <input type="password" placeholder="Mật Khẩu" class="form-control" id="pwdUser"
+                                                required>
+                                            <span class="error" id="errorPass">Vui lòng nhập mật khẩu</span>
+                                        </div>
+                                        <div class="right-rememberCheck">
+                                            <div class="form-check-inline" id="right-Check">
+                                                <input type="checkbox" id="rememberID" class="form-check-input" value="">
+                                                <label class="form-check-label">
+                                                    Ghi nhớ tài khoản
+                                                </label>
+                                            </div>
+                                            <a href="#" id="right-QuenMK">
+                                                Quên mật khẩu ?
+                                            </a>
+                                        </div>
+                                        <div class="form-group text-center mt-4 rightFooterFirst">
+                                            <a href="#" class="btnModal btnRight" id="login">Đăng Nhập</a>
+                                        </div>
+                                    </form>
+                                </div>
+    
+                                <div class="inner" id="formQuenMK">
+                                    <h2>Lấy lại mật khẩu</h2>
+                                    <p class="text-center formQuenMK-content">
+                                        Để lấy lại mật khẩu, bạn nhập email đăng nhập vào ô dưới đây. Sau đó CyberSoft sẽ
+                                        gửi email hướng dẫn bạn khôi phục mật khẩu
+                                    </p>
+                                    <div class="form-group rightInput">
+                                        <span>
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                        <input type="text" autofocus="flase" class="form-control" placeholder="Email của bạn"
+                                            id="emailQuenMK">
+                                    </div>
+                                    <div class="form-group text-center mt-4 rightFooterQuenMK">
+                                        <a href="#" class="btnModal btnRight" id="btnQuenMK">Tiếp tục</a>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="inner" id="formQuenMK">
-                                <h2>Lấy lại mật khẩu</h2>
-                                <p class="text-center formQuenMK-content">
-                                    Để lấy lại mật khẩu, bạn nhập email đăng nhập vào ô dưới đây. Sau đó CyberSoft sẽ
-                                    gửi email hướng dẫn bạn khôi phục mật khẩu
-                                </p>
-                                <div class="form-group rightInput">
-                                    <span>
-                                        <i class="fa fa-envelope"></i>
-                                    </span>
-                                    <input type="text" autofocus="flase" class="form-control" placeholder="Email của bạn"
-                                        id="emailQuenMK">
-                                </div>
-                                <div class="form-group text-center mt-4 rightFooterQuenMK">
-                                    <a href="#" class="btnModal btnRight" id="btnQuenMK">Tiếp tục</a>
-                                </div>
-                            </div>
-
-                            <div class="inner" id="formSignUP">
-                                <h2>Đăng Ký</h2>
-                                <div class="form-group rightInput">
-                                    <span>
-                                        <i class="fa fa-user-circle-o"></i>
-                                    </span>
-                                    <input type="text" autofocus="flase" class="form-control" placeholder="Tên Đăng Nhập"
-                                        id="idUserNew">
-                                </div>
-                                <div class="form-group rightInput">
-                                    <span>
-                                        <i class="fa fa-envelope"></i>
-                                    </span>
-                                    <input type="text" autofocus="flase" class="form-control" placeholder="Email của bạn"
-                                        id="emailUser">
-                                </div>
-                                <div class="form-group rightInput">
-                                    <span>
-                                        <i class="fa fa-lock"></i>
-                                    </span>
-                                    <input type="password" placeholder="Mật Khẩu" class="form-control" id="pwdUserNew">
-                                </div>
-                                <div class="form-group rightInput">
-                                    <span>
-                                        <i class="fa fa-lock"></i>
-                                    </span>
-                                    <input type="password" placeholder="Nhập Lại Mật Khẩu" class="form-control" id="pwdUserNewP2">
-                                </div>
-                                <div class="form-group text-center mt-4 rightFooterFirst" id="divBtnSignUp">
-                                    <a href="#" class="btnModal btnRight" id="signUp">Đăng Ký</a>
+    
+                                <div class="inner" id="formSignUP">
+                                    <h2>Đăng Ký</h2>
+                                    <div class="form-group rightInput">
+                                        <span>
+                                            <i class="fa fa-user-circle-o"></i>
+                                        </span>
+                                        <input type="text" autofocus="flase" class="form-control" placeholder="Tên Đăng Nhập"
+                                            id="idUserNew">
+                                        <span class="error" id="error-idUserNew">Tên đăng nhập không được để trống!</span>
+                                    </div>
+                                    <div class="form-group rightInput">
+                                        <span>
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                        <input type="password" placeholder="Mật Khẩu" class="form-control" id="pwdUserNew">
+                                        <span class="error" id="error-pwdUserNew">Mật khẩu không được để trống!</span>
+                                    </div>
+                                    <div class="form-group rightInput">
+                                        <span>
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                        <input type="password" placeholder="Nhập Lại Mật Khẩu" class="form-control" id="pwdUserNewP2">
+                                        <span class="error" id="error-pwdUserNewP2">Mật khẩu không được để trống!</span>
+                                    </div>
+                                    <div class="form-group text-center mt-4 rightFooterFirst" id="divBtnSignUp">
+                                        <a href="#" class="btnModal btnRight" id="signUp">Đăng Ký</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Modal Footer -->
-                <div class="modal-footer p-0" id="modalFooter">
-                    <div class="form-group text-center col-12">
-                        <p class="mb-0 mt-2">Nếu Chưa Có Tài Khoản</p>
-                        <i class="fa fa-hand-o-down"></i>
-                        <a href="#" class="btnModal btnRespon d-block" id="signUpRespon">Đăng Ký</a>
+                    <!-- Modal Footer -->
+                    <div class="modal-footer p-0" id="modalFooter">
+                        <div class="form-group text-center col-12">
+                            <p class="mb-0 mt-2">Nếu Chưa Có Tài Khoản</p>
+                            <i class="fa fa-hand-o-down"></i>
+                            <a href="#" class="btnModal btnRespon d-block btnSignUp" id="signUpRespon">Đăng Ký</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 
     <!-- BEGIN FOOTER -->
@@ -397,6 +395,22 @@
     <script src="../../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- File JS -->
     <script src="../../../assets/js/index.js"></script>
+    <!-- Script common -->
+    <script src="../../../assets/Vendors/common.js"></script>
+    <script src="../../../assets//Vendors/kiemtraForm.js"></script>
+    <script src="../../../assets/Vendors/jQueryNhapNhay/dist/js/NhapNhay.js"></script>
+    <!-- Model Người Dùng & Khóa Học-->
+    <script src="../../Models/nguoidung.js"></script>
+    <script src="../../Models/danhsachnguoidung.js"></script>
+    <script src="../../Models/khoahoc.js"></script>
+    <script src="../../Models/danhsachkhoahoc.js"></script>
+    <!-- Service Người Dùng & Service Khóa Học -->
+    <script src="../../Services/nguoidungService.js"></script>
+    <script src="../../Services/khoahocService.js"></script>
+    <!-- Script SweetAlert -->
+    <script src="../../../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Script quản lý user HV -->
+    <script src="../../Controllers/quanlyuser.js"></script>
 </body>
 
 </html>
