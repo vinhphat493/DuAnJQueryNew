@@ -56,3 +56,15 @@
         color: $colorHover;
     }
 }
+
+.btnLuuTT{
+    width: 180px;
+    padding: $pd-2 $pd-30;
+    background-color: $colorHover;
+    color: $colorWhite;
+    text-transform: uppercase;
+    &:hover{
+        color: $colorWhite;
+        opacity: 0.9;
+    }
+}

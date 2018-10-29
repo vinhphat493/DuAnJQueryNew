@@ -138,23 +138,33 @@ $(document).ready(() => {
     //Hàm xóa khóa học trên tầng nút button xóa của khóa học
     $("body").delegate(".btnXoa", 'click', function () {
         var maKH = $(this).attr("makh");
-        svKhoaHoc.XoaKhoaHoc(maKH).done(function (ketqua) {
-            if (ketqua) {
-                swal({
-                    title: "Xóa thành công!",
-                    text: "Bạn đã xóa khóa học thành công!",
-                    icon: "success"
-                });
-                $(".swal-button").on('click', () => {
-
-                })
-            }
-        }).fail(function (loi) {
-            console.log(loi)
+        swal({
+            title: "Bạn có chắc muốn xóa không ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
         })
-        setTimeout(() => {
-            $(this).parents("tr").fadeOut("slow");
-        }, 1000);
+            .then((willDelete) => {
+                if (willDelete) {
+                    svKhoaHoc.XoaKhoaHoc(maKH).done(function (ketqua) {
+                        if (ketqua) {
+                            swal({
+                                title: "Xóa thành công!",
+                                text: "Bạn đã xóa khóa học thành công!",
+                                icon: "success"
+                            });
+                            $(".swal-button").on('click', () => {
+                                location.reload();//reload lại trang
+                            })
+                        }
+                    }).fail(function (loi) {
+                        console.log(loi)
+                    })
+                } else {
+                    swal("Bạn đã hủy xóa khóa học!");
+                }
+            });
+
     })
 
     //Hàm checked tất cả người dùng một lúc
@@ -170,25 +180,38 @@ $(document).ready(() => {
     //Hàm xóa nhiều khóa học một lượt
     $("#xoaKH").click(function () {
         var listCheckbox = $(".cbMaKhoaHoc");
-        for (var i = 0; i < listCheckbox.length; i++) {
-            var checkbox = listCheckbox[i];
-            if (checkbox.checked) {
-                svKhoaHoc.XoaKhoaHoc(checkbox.value).done(function (ketqua) {
-                    if (ketqua) {
-                        swal({
-                            title: "Xóa thành công!",
-                            text: "Bạn đã xóa khóa học thành công!",
-                            icon: "success"
-                        });
-                        $(".swal-button").on('click', () => {
-                            location.reload();//reload lại trang
-                        })
+        swal({
+            title: "Bạn có chắc muốn xóa không ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    for (var i = 0; i < listCheckbox.length; i++) {
+                        var checkbox = listCheckbox[i];
+                        if (checkbox.checked) {
+                            svKhoaHoc.XoaKhoaHoc(checkbox.value).done(function (ketqua) {
+                                if (ketqua) {
+                                    swal({
+                                        title: "Xóa thành công!",
+                                        text: "Bạn đã xóa khóa học thành công!",
+                                        icon: "success"
+                                    });
+                                    $(".swal-button").on('click', () => {
+                                        location.reload();//reload lại trang
+                                    })
+                                }
+                            }).fail(function (loi) {
+                                console.log(loi)
+                            })
+                        }
                     }
-                }).fail(function (loi) {
-                    console.log(loi)
-                })
-            }
-        }
+                } else {
+                    swal("Bạn đã hủy xóa khóa học!");
+                }
+            });
+
     })
 
     //Tìm kiếm khóa học

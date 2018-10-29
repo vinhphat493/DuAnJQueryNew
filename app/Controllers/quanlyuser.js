@@ -8,9 +8,68 @@
 $(document).ready(function () {
     var svNguoiDung = new ServiceNguoiDung();
     var nguoiDung = new NguoiDung();
+    var khoaHoc = new KhoaHoc();
+    var DSND = new DanhSachNguoiDung();
     var kiemtra = new KiemTraForm();
     var svKhoaHoc = new ServiceKhoaHoc();
-    layThongTinND("NguoiDung");
+    //Lấy danh sách người dùng từ api service về
+    svNguoiDung.LayDanhSachNguoiDung()
+        .done((mangDSND) => {
+            DSND.MangDSND = mangDSND;
+        })
+        .fail((error) => {
+            console.log(error);
+        })
+    LayTTNDDaluu("NguoiDung");
+
+    //Hàm lấy dữ liệu khóa học người dùng mới đăng nhập hiện thị lên
+    function LayTTNDDaluu(keyLocal) {
+        var nguoiDung = LayDuLieuLocal(keyLocal);
+        if (nguoiDung != false) {
+            $("#btnLogin").hide();
+            $("#doneLogin").show();
+            var tenNguoiDungChuCaiDau = nguoiDung.HoTen.substring(0, 1).toUpperCase();
+            var tenNguoiDung = nguoiDung.HoTen.substring(1);
+            $("#tenUserLogin").html(tenNguoiDungChuCaiDau+tenNguoiDung);
+            $("#nameUser").html(tenNguoiDungChuCaiDau+tenNguoiDung);
+            $("#name").val(nguoiDung.HoTen);
+            $("#email").val(nguoiDung.Email);
+            $("#soDT").val(nguoiDung.SoDT);
+            svKhoaHoc.ListKHHV(nguoiDung.TaiKhoan).done(function (ketqua) {
+                if (ketqua != "Did not find the course") {
+                    LuuDuLieuVaoLocal("MaKhoaHoc", ketqua);
+                    /*var mangDSKHHV = ketqua;
+                    var divKH = "";
+                    for (var i = 0; i < mangDSKHHV.length; i++) {
+                        var khoaHocDaGhiDanh = mangDSKHHV[i];
+                        divKH += `
+                        <div class="col-md-4 col-sm-6 col-12 pb-5 khoahocItem">
+                        <div class="card">
+                            <div class="imgKhoaHoc">
+                                <img class="card-img-top" src="" alt="Card image" >
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">${khoaHocDaGhiDanh.TenKhoaHoc}</h4>
+                                <a href="chitietkhoahoc.html" class="btn btn-primary">Xem Chi Tiết</a>
+                            </div>
+                        </div>
+                        </div>
+                        `
+                    }
+                    $("#dskh").html(divKH);*/
+                } else {
+                    $("#titleDSKH").html("Hiện bạn chưa ghi danh bất kỳ khóa học nào")
+                    $("#dskh").hide();
+                }
+            }).fail(function (loi) {
+                console.log(loi)
+            })
+            LayKhoaHocDayDu();
+        }
+    }
+
+
+
     //Reset form đăng nhập khi click vào đăng nhập trên trang chủ
     $("#btnLogin").click(function () {
         $("#errorID").hide();
@@ -34,8 +93,10 @@ $(document).ready(function () {
                         nguoiDung = ketqua[0];
                         console.log(nguoiDung.MaLoaiNguoiDung);
                         if (nguoiDung.MaLoaiNguoiDung == "GV") {
+                            luuThongTinND("NguoiDungAdmin", nguoiDung);
                             swal("Đăng nhập thành công!", "Bấm OK để tiếp tục", "success");
                             $(".swal-button").on('click', () => {
+                                window.location.href = "./admin/main/index.html";
                                 $(".closeModal").trigger('click');
                             });
                         } else {
@@ -44,13 +105,14 @@ $(document).ready(function () {
                             var tenNguoiDungChuCaiDau = nguoiDung.HoTen.substring(0, 1).toUpperCase();
                             var tenNguoiDung = nguoiDung.HoTen.substring(1);
                             $("#tenUserLogin").html(tenNguoiDungChuCaiDau + tenNguoiDung);
+                            LuuDuLieuVaoLocal("NguoiDung", nguoiDung);
                             swal("Đăng nhập thành công!", "Bấm OK để tiếp tục", "success");
                             $(".swal-button").on('click', () => {
                                 $(".closeModal").trigger('click');
                             });
-                            if ($("#rememberID").prop("checked")) {
-                                luuThongTinND("NguoiDung", nguoiDung);
-                            }
+                            // if ($("#rememberID").prop("checked")) {
+                            //     luuThongTinND("NguoiDung", nguoiDung);
+                            // }
                         }
                     } else {
                         $("#divError").fadeIn();
@@ -76,6 +138,7 @@ $(document).ready(function () {
         $("#btnLogin").show();
     })
 
+    //Hàm reset form đăng ký
     $(".btnSignUp").click(function () {
         $("#formSignUP input").val("");
         $("#formSignUP .error").hide();
@@ -85,7 +148,6 @@ $(document).ready(function () {
 
     //Xử lý text error
     function xuLyAnTextError() {
-
         $("#idUser").keyup(function () {
             $("#errorID").fadeOut();
         })
@@ -163,58 +225,93 @@ $(document).ready(function () {
         }
     })
 
-    $("#ttUser").click(function () {
-
+    //Hàm sửa thông tin người dùng
+    $("#luuTTND").click(function () {
+        var nguoidungDangDangNhap = LayDuLieuLocal("NguoiDung");
+        console.log(nguoidungDangDangNhap);
+        var ttNguoiDung = DSND.LayThongTinNguoiDung(nguoidungDangDangNhap.TaiKhoan);
+        ttNguoiDung.HoTen= $("#name").val();
+        ttNguoiDung.Email = $("#email").val();
+        ttNguoiDung.SoDT = $("#soDT").val();  
+        svNguoiDung.CapNhatThongTinNguoiDung(ttNguoiDung).done((ketqua) => {
+            if (ketqua) {
+                ttNguoiDung.MaKhau="";
+                swal({  
+                    title: "Cập nhập thông tin thành công!",
+                    icon: "success",
+                });
+                setTimeout(() => {
+                    LuuDuLieuVaoLocal("NguoiDung",ttNguoiDung)
+                    location.reload();//reload lại trang
+                }, 1000);
+            };
+        }).fail((loi) => {
+            console.log(loi)
+        })
     })
 
-    function luuThongTinND(key, value) {
+    //Hàm đổi mật khẩu
+    $("#doiMK").click(()=>{
+        var passOld = $("#pwdUserOld").val();
+        var passNew = $("#pwdUserNew").val();
+        var passNew2 = $("#pwdUserNew2").val();
+        var nguoidungDangDangNhap = LayDuLieuLocal("NguoiDung");
+        var ttNguoiDung = DSND.LayThongTinNguoiDung(nguoidungDangDangNhap.TaiKhoan);
+        if(ttNguoiDung == passOld){
+
+        }
+    })
+
+    //Hàm lấy chi tiết các khóa học
+    function LayKhoaHocDayDu() {
+        var mangKHDAGD = LayDuLieuLocal("MaKhoaHoc");
+        var mangKH = [];
+        var divKH = "";
+        if (mangKHDAGD != false) {
+            for (var i = 0; i < mangKHDAGD.length; i++) {
+                var khoaHocDAGD = mangKHDAGD[i];
+                svKhoaHoc.ChiTietKhoaHoc(khoaHocDAGD.MaKhoaHoc).done(function (ketqua) {
+                    khoaHoc = ketqua;
+                    var mota = khoaHoc.MoTa;
+                    khoaHoc.MoTa.length >= 100 ? mota = khoaHoc.MoTa.substring(0, 100) + "..." : mota = khoaHoc.MoTa;
+                    divKH += `
+                    <div class="col-md-4 col-sm-6 col-12 pb-5 khoahocItem">
+                    <div class="card">
+                        <div class="imgKhoaHoc">
+                            <img class="card-img-top" src="${khoaHoc.HinhAnh}" alt="Card image" >
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">${khoaHoc.TenKhoaHoc}</h4>
+                            <div class="card-text" style="height:70px">${mota}</div>
+                            <a href="chitietkhoahoc.html" class="btn btn-primary">Xem Chi Tiết</a>
+                        </div>
+                    </div>
+                    </div>
+                    `
+                    $("#dskh").html(divKH);
+                }).fail(function (loi) {
+                    return console.log("bi loi roi");
+                })
+            }
+
+        }
+
+    }
+
+    // Hàm lưu dữ liệu vào localStorage
+    function LuuDuLieuVaoLocal(key, value) {
         var value = JSON.stringify(value);
         localStorage.setItem(key, value);
     }
-    function layThongTinND(key) {
-        var TTND = JSON.parse(localStorage.getItem(key));
-        if (TTND != null) {
-            nguoiDung = TTND;
-            $("#btnLogin").hide();
-            $("#doneLogin").show();
-            var tenNguoiDungChuCaiDau = nguoiDung.HoTen.substring(0, 1).toUpperCase();
-            var tenNguoiDung = nguoiDung.HoTen.substring(1);
-            $("#tenUserLogin").html(tenNguoiDungChuCaiDau + tenNguoiDung);
-            $("#nameUser").html(tenNguoiDungChuCaiDau + tenNguoiDung);
-            svKhoaHoc.ListKHHV(nguoiDung.TaiKhoan).done(function (ketqua) {
-                if (ketqua != "Did not find the course") {
-                    console.log(ketqua);
-                    var mangDSKHHV = ketqua;
-                    var divKH = "";
-                    for (var i = 0; i < mangDSKHHV.length; i++) {
-                        var khoaHoc = mangDSKHHV[i];
-                        divKH += `
-                        <div class="col-md-4 col-sm-6 col-12 pb-5 khoahocItem">
-                        <div class="card">
-                            <div class="imgKhoaHoc">
-                                <img class="card-img-top" src="../../../assets/img/pexels-photo-92904.jpeg
-                                " alt="Card image" >
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">${khoaHoc.TenKhoaHoc}</h4>
-                                <a href="chitietkhoahoc.html" class="btn btn-primary">Xem Chi Tiết</a>
-                            </div>
-                        </div>
-                        </div>
-                        `
-                    }
-                    $("#dskh").html(divKH);
-                } else {
-                    $("#titleDSKH").html("Hiện bạn chưa ghi danh bất kỳ khóa học nào")
-                    $("#dskh").hide();
-                }
-            }).fail(function (loi) {
-                console.log(loi)
-            })
+    //Hàm lấy dữ liệu từ locaStorage
+    function LayDuLieuLocal(key) {
+        var dulieu = JSON.parse(localStorage.getItem(key));
+        if (dulieu != null) {
+            return dulieu;
         } else {
-            $("#doneLogin").hide();
-            $("#btnLogin").show();
+            return false;
         }
-        return TTND
     }
+
+
 })

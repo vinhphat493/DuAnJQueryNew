@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="../../assets/Vendors/Particles/particles.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/Vendors/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../assets/Vendors/jquery-ui/jquery-ui.theme.min.css">
 </head>
 
 <body>
@@ -54,11 +56,10 @@
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="./user.html"><i class="fa fa-cog mr-2"></i>Cài Đặt</a>
-                            <a class="dropdown-item" href="#" id="logOut"><i class="fa fa-sign-out mr-2"></i>Thoát</a>
+                            <a class="dropdown-item" href="./index.html" id="logOut"><i class="fa fa-sign-out mr-2"></i>Thoát</a>
                         </div>
                     </li>
                 </ul>
-
             </div>
         </nav>
     </header>
@@ -93,7 +94,7 @@
                             <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#listKH">Khóa học của bạn</a>
+                            <a class="nav-link" data-toggle="tab" href="#listKH" id="laykhoahoc"> Khóa học của bạn</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#ttTaiKhoan">Thông tin tài khoản</a>
@@ -193,33 +194,11 @@
                         </div>
                         <div id="ttTaiKhoan" class="container tab-pane fade">
                             <div class="row pt-5">
-                                <div class="col-md-6 right">
+                                <div class="col-md-8 right">
                                     <div class="form-group">
                                         <label for="name">Họ tên</label>
                                         <input type="text" class="form-control" placeholder="Họ và tên" id="name">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="name">Giới tính</label>
-                                        <div class="form-check">
-                                            <label class="form-check-label" for="radio1">
-                                                <input type="radio" class="form-check-input" id="radio1" name="optradio"
-                                                    value="option1">Nữ
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label" for="radio2">
-                                                <input type="radio" class="form-check-input" id="radio2" name="optradio"
-                                                    value="option2" checked>Nam
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="usr">Địa chỉ</label>
-                                        <input type="text" class="form-control" id="diachi" placeholder="Địa chỉ">
-                                    </div>
-
-                                </div>
-                                <div class="col-md-6 left">
                                     <div class="form-group">
                                         <label for="usr">Email</label>
                                         <input type="text" class="form-control" id="email" placeholder="Địa chỉ Email">
@@ -228,14 +207,10 @@
                                         <label for="usr">Số điện thoại</label>
                                         <input type="text" class="form-control" id="soDT" placeholder="Số điện thoại">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="usr">Ngày sinh</label>
-                                        <input type="text" class="form-control" id="ngaysin" placeholder="Ngày tháng năm sinh">
-                                    </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="btnSave text-center mt-5">
-                                        <a href="#" class="btnLuuTT">Lưu Lại</a>
+                                        <a href="#" class="btn btnLuuTT" id="luuTTND">Lưu Lại</a>
                                     </div>
                                 </div>
                             </div>
@@ -257,8 +232,8 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="btnSave text-center mt-5">
-                                        <a href="#" class="btnLuuTT">Lưu Lại</a>
+                                    <div class="btnSave text-center mt-5" id="doiMK">
+                                        <a href="#" class="btn btnLuuTT">Lưu Lại</a>
                                     </div>
                                 </div>
                             </div>
@@ -293,7 +268,7 @@
                     <ul class="thongtin">
                         <li><a href="./index.html">Trang chủ</a></li>
                         <li><a href="./layouts/gioithieu.html">Giới thiệu</a></li>
-                        <li><a href="./layouts/danhsachkhoahoc.html">Danh sách khóa học</a></li>
+                        <li><a href="./layouts/danhsachkhoahoc.html" >Danh sách khóa học</a></li>
                         <li><a href="./layouts/lienhe.html">Liên hệ</a></li>
                     </ul>
                 </div>
@@ -321,7 +296,15 @@
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <!-- Script JQUERY-UI -->
+    <script src="../../assets/Vendors/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+          $("#ngaysinh").datepicker({
+            dateFormat: "mm/dd/yy"
+          });
+        });
+      </script>
     <!-- File Owl-carousel -->
     <script src="../../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
 
@@ -332,9 +315,10 @@
 
     <!-- File JS -->
     <script src="../../assets/js/index.js"></script>
+    
     <!-- Script common -->
     <script src="../../assets/Vendors/common.js"></script>
-    <script src="../../assets//Vendors/kiemtraForm.js"></script>
+    <script src="../../assets/Vendors/kiemtraForm.js"></script>
     <script src="../../assets/Vendors/jQueryNhapNhay/dist/js/NhapNhay.js"></script>
     <!-- Model Người Dùng & Khóa Học-->
     <script src="../Models/nguoidung.js"></script>

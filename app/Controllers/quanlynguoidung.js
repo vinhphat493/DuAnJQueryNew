@@ -76,11 +76,22 @@ $(document).ready(() => {
     //Xóa 1 người dùng trong 
     $("body").delegate(".btnXoa", "click", function () {
         var tkNguoiDung = $(this).attr("taikhoan");
-        console.log(tkNguoiDung);
-        XoaNguoiDung(tkNguoiDung);
-        setTimeout(() => {
-            $(this).parents("tr").fadeOut("slow");
-        }, 1000);
+        // console.log(tkNguoiDung);
+        swal({
+            title: "Bạn có chắc muốn xóa không ?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    XoaNguoiDung(tkNguoiDung);
+                } else {
+                    swal("Bạn đã hủy xóa người dùng!");
+                }
+            });
+
+        
     })
 
     //Check tất cả checkbox
@@ -95,17 +106,26 @@ $(document).ready(() => {
 
     //Xóa nhiều người dùng bằng checkbox
     $("#xoaND").on('click', function () {
-        // console.log($(".ckbTaiKhoan"));
+        console.log($(".ckbTaiKhoan"));
         var listCheckbox = $(".ckbTaiKhoan")
         for (var i = 0; i < listCheckbox.length; i++) {
             var checkbox = listCheckbox[i];
             if (checkbox.checked) {
-                XoaNguoiDung(checkbox.value);
+                swal({
+                    title: "Bạn có chắc muốn xóa không ?",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            XoaNguoiDung(checkbox.value);
+                        } else {
+                            swal("Bạn đã hủy xóa người dùng!");
+                        }
+                    });   
             }
         }
-        setTimeout(() => {
-            location.reload();
-        }, 2000);
     })
 
     //Hiện thị popup khi người dùng click vào nút chỉnh sửa
@@ -136,7 +156,7 @@ $(document).ready(() => {
         var nguoiDungCanSua = DSND.LayThongTinNguoiDung(tkNguoiDung);
         console.log(nguoiDungCanSua);
         $("#TaiKhoan").val(nguoiDungCanSua.TaiKhoan).attr("readonly", "true");
-        $("#MatKhau").val(nguoiDungCanSua.MatKhau).attr("readonly", "true");
+        $("#MatKhau").val(nguoiDungCanSua.MatKhau);
         $("#HoTen").val(nguoiDungCanSua.HoTen);
         $("#Email").val(nguoiDungCanSua.Email);
         $("#SoDienThoai").val(nguoiDungCanSua.SoDT);
@@ -241,16 +261,20 @@ $(document).ready(() => {
     function XoaNguoiDung(tkNguoiDung) {
         svNguoidung.XoaNguoiDung(tkNguoiDung).done((ketqua) => {
             if (ketqua) {
-                swal({
-                    title: "Xóa thành công!",
-                    text: "Bạn đã xóa người dùng thành công!",
-                    icon: "success"
+                swal("Người dùng đã được xóa thành công!", {
+                    icon: "success",
                 });
-                $(".swal-button").on('click', () => {
-                })
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
             }
         }).fail((loi) => {
             console.log(loi);
+            swal({
+                title: "Xóa không thành công!",
+                icon: "warning"
+            });
+            // return false;
         })
     }
 

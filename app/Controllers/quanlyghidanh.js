@@ -108,8 +108,30 @@
             return html;
         }
 
-    }
+    }   
 
+    //Tìm kiếm người dùng
+    $("#timnguoidung").keyup(function () {
+        var tuKhoa = $(this).val();
+        var doDaiTuKhoa = tuKhoa.length;
+        var danhsachNguoiDungTK = DSND.TimNguoiDung(tuKhoa);
+        PhanTrang(danhsachNguoiDungTK.MangDSND);
+        //Duyệt các thẻ td
+        $(".tdHoTen").each(function () {
+            var hoTen = $(this).text(); //Lấy ra họ tên
+            var viTriTuKhoa = hoTen.search(tuKhoa); //vị trí từ khóa trong chuỗi hoTen
+            if (viTriTuKhoa != -1) {
+                var chuoiKetQua = `
+                ${hoTen.substring(0, viTriTuKhoa)} 
+                <span class="InDam">${tuKhoa}</span> 
+                ${hoTen.substring(viTriTuKhoa + doDaiTuKhoa)}
+            `;
+                $(this).html(chuoiKetQua); //Gán lại cho html() của chính thẻ td đó
+            }
+        });
+        $(".InDam").NhapNhay({ soLan: 3, size: "17px", color: "red" });
+    })
+    //Load DanhSachKhoaHoc
     function LoadListDSKH(taikhoan){
         var loadListDSKH = "";
         svKhoaHoc.ListKHHV(taikhoan)

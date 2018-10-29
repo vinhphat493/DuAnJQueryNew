@@ -64,25 +64,6 @@
                     }
                     
                 }
-                .right{
-                    .form-group:nth-child(2){
-                        padding-right: $pd-100+$pd-60;
-                        @include MediaQuery(1200px){
-                            padding-right: $pd-100+$pd-1;
-                        }
-                        @include MediaQuery(992px){
-                            padding-right: $pd-20+$pd-2;
-                        }
-                        @include MediaQuery(768px){
-                            padding-right: $pd-20+$pd-30+$pd-100;
-                        }
-                        .form-check{
-                            display: inline;;
-                            float: right;
-                            margin: 0 $mg-2;
-                        }
-                    }
-                }
             }
             
         }

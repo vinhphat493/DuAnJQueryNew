@@ -84,6 +84,16 @@ header, nav, aside, section, article, main, footer {
   .btnModal:hover {
     color: #bb2035; }
 
+.btnLuuTT {
+  width: 180px;
+  padding: 15px 30px;
+  background-color: #bb2035;
+  color: #fff;
+  text-transform: uppercase; }
+  .btnLuuTT:hover {
+    color: #fff;
+    opacity: 0.9; }
+
 #myModal .modal-dialog {
   transform: translate(0, 18%);
   -webkit-transform: translate(0, 18%);
@@ -742,21 +752,6 @@ header, nav, aside, section, article, main, footer {
       outline: none; }
       .user .content #ttTaiKhoan .row .form-group input:focus {
         box-shadow: unset; }
-  .user .content #ttTaiKhoan .row .right .form-group:nth-child(2) {
-    padding-right: 160px; }
-    @media screen and (max-width: 1200px) {
-      .user .content #ttTaiKhoan .row .right .form-group:nth-child(2) {
-        padding-right: 110px; } }
-    @media screen and (max-width: 992px) {
-      .user .content #ttTaiKhoan .row .right .form-group:nth-child(2) {
-        padding-right: 35px; } }
-    @media screen and (max-width: 768px) {
-      .user .content #ttTaiKhoan .row .right .form-group:nth-child(2) {
-        padding-right: 150px; } }
-    .user .content #ttTaiKhoan .row .right .form-group:nth-child(2) .form-check {
-      display: inline;
-      float: right;
-      margin: 0 20px; }
 .user .content #doiMKUser .row {
   padding-bottom: 100px; }
   .user .content #doiMKUser .row .form-group {
