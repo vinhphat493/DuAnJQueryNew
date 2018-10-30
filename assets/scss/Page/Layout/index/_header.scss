@@ -17,6 +17,8 @@
         }
     } 
     .form-inline{
+        
+        
         input{
             @include MediaQuery(992px){
                 width: 88%;

@@ -584,35 +584,31 @@ header, nav, aside, section, article, main, footer {
           margin-top: 10px; }
           #chitietkhoahoc .body-chitietkhoahoc .moTaKhoaHoc .tab-content .tab-pane .thongtingiangvien .p3 i {
             color: #D4B03B; }
-    #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc {
-      position: absolute;
-      right: 0;
-      top: -55%; }
+    @media screen and (max-width: 1200px) {
+      #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc {
+        position: unset;
+        padding-top: 30px; } }
+    #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card {
+      width: 400px; }
       @media screen and (max-width: 1200px) {
-        #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc {
-          position: unset;
-          padding-top: 30px; } }
-      #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card {
-        width: 400px; }
-        @media screen and (max-width: 1200px) {
-          #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card {
-            width: 300px; } }
-        @media screen and (max-width: 992px) {
-          #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card {
-            width: 500px; } }
-        #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card img {
-          width: 100%;
-          height: 100%; }
-        #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card .card-body {
+        #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card {
+          width: 300px; } }
+      @media screen and (max-width: 992px) {
+        #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card {
+          width: 500px; } }
+      #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card img {
+        width: 100%;
+        height: 250px; }
+      #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card .card-body {
+        font-size: 1.2rem; }
+        #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card .card-body .card-title {
           font-size: 1.2rem; }
-          #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card .card-body .card-title {
-            font-size: 1.2rem; }
-            @media screen and (max-width: 1200px) {
-              #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card .card-body .card-title {
-                font-size: 1rem; } }
-            @media screen and (max-width: 992px) {
-              #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card .card-body .card-title {
-                font-size: 1.2rem; } }
+          @media screen and (max-width: 1200px) {
+            #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card .card-body .card-title {
+              font-size: 1rem; } }
+          @media screen and (max-width: 992px) {
+            #chitietkhoahoc .body-chitietkhoahoc .ghidanhKhoaHoc .card .card-body .card-title {
+              font-size: 1.2rem; } }
 
 #gioithieu {
   padding-top: 60px; }

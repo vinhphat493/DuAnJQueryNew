@@ -68,9 +68,6 @@
             }
         }
         .ghidanhKhoaHoc{
-            position: absolute;
-            right: 0;
-            top: -55%;
             @include MediaQuery (1200px){
                 position: unset;
                 padding-top: $pd-30;
@@ -85,7 +82,7 @@
                 }
                 img{
                     width: 100%;
-                    height: 100%;
+                    height: 250px;
                 }
                 .card-body{
                     font-size: $fs-2;

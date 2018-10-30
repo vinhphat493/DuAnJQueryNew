@@ -87,10 +87,9 @@
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user"
-                                    class="" /> <span class="hidden-md-down">Mark Sanders &nbsp;</span> </a>
+                                    class="" /> <span class="hidden-md-down" id="tenUserLogin">Mark Sanders &nbsp;</span> </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#"><i class="fa fa-cog mr-2"></i>Cài Đặt</a>
-                                <a class="dropdown-item" href="#"><i class="fa fa-sign-out mr-2"></i>Thoát</a>
+                                <a class="dropdown-item" id="logout" href="#"><i class="fa fa-sign-out mr-2"></i>Thoát</a>
                             </div>
                         </li>
                     </ul>
@@ -273,6 +272,8 @@
     <!-- Script common -->
     <script src="../../../../assets/Vendors/common.js"></script>
     <script src="../../../../assets/Vendors/jQueryNhapNhay/dist/js/NhapNhay.js"></script>
+    <!-- Script Index -->
+    <script src="../main/js/index.js"></script>
     <!-- Model Người Dùng & Khóa Học-->
     <script src="../../../Models/nguoidung.js"></script>
     <script src="../../../Models/danhsachnguoidung.js"></script>
