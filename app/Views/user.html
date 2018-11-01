@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="../../node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="../../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="../../assets/Vendors/Particles/particles.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/Vendors/jquery-ui/jquery-ui.min.css">
     <link rel="stylesheet" href="../../assets/Vendors/jquery-ui/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="../../assets/Vendors/Loader/styleLoaderIndex.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
 </head>
 
 <body>
@@ -35,6 +37,12 @@
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2 " type="text" id="timkhoahoc" placeholder="Tìm khóa học">
                     <button class="btn btn-outline-dark my-2 my-sm-0">Search</button>
+                    <div id="divItemSearch" class="border border-dark rounded">
+                        <p id="titleSearch"></p>
+                        <div class="container px-0 mx-0" id="listDSKHTK">
+
+                        </div>
+                    </div>
                 </form>
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li class="nav-item">
@@ -85,9 +93,18 @@
                             <img src="../../assets/img/user.png" class="img-fluid" alt="">
                         </div>
                         <h1 class="display-4" id="nameUser">Tên User</h1>
+                        <div class="cssload-container mt-3" id="ghidanhLoader">
+                            <div class="cssload-l">L</div>
+                            <div class="cssload-circle"></div>
+                            <div class="cssload-square"></div>
+                            <div class="cssload-triangle"></div>
+                            <div class="cssload-i">I</div>
+                            <div class="cssload-n">N</div>
+                            <div class="cssload-g">G</div>
+                        </div> 
                     </div>
                 </div>
-                <div class="container content pt-5">
+                <div class="container content pt-5 mt-5">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">

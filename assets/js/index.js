@@ -113,4 +113,8 @@ $(document).ready(function () {
     }
 })();
 
+$("#fountainG").hide();
+$("#divItemSearch").hide();
+$("#ghidanhLoader").hide();
+
 

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="../../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="../../assets/Vendors/Particles/particles.css">
+    <link rel="stylesheet" href="../../assets/Vendors/Loader/styleLoaderIndex.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
@@ -33,9 +34,7 @@
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2 " type="text" id="timkhoahoc" placeholder="Tìm khóa học">
                     <button class="btn btn-outline-dark my-2 my-sm-0">Search</button>
-                    <div id="divItemSearch" class="border border-dark rounded" style="position: absolute; top: 120%;width: 72%;
-                    background-color: white;
-                    padding: 5px;">
+                    <div id="divItemSearch" class="border border-dark rounded">
                         <p id="titleSearch"></p>
                         <div class="container px-0 mx-0" id="listDSKHTK">
 
@@ -82,6 +81,15 @@
         <div class="slider-caption text-center">
             <h1 class="display-4">CYBERSOFT</h1>
             <p>Đào Tạo Chuyên Viên Lập Trình</p>
+            <div class="cssload-container" id="ghidanhLoader">
+                <div class="cssload-l">L</div>
+                <div class="cssload-circle"></div>
+                <div class="cssload-square"></div>
+                <div class="cssload-triangle"></div>
+                <div class="cssload-i">I</div>
+                <div class="cssload-n">N</div>
+                <div class="cssload-g">G</div>
+            </div> 
         </div>
     </section>
     <!-- END SLIDER -->
@@ -443,6 +451,7 @@
     <script src="../../assets/Vendors/common.js"></script>
     <script src="../../assets//Vendors/kiemtraForm.js"></script>
     <script src="../../assets/Vendors/jQueryNhapNhay/dist/js/NhapNhay.js"></script>
+    
     <!-- Model Người Dùng & Khóa Học-->
     <script src="../Models/nguoidung.js"></script>
     <script src="../Models/danhsachnguoidung.js"></script>

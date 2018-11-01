@@ -6,6 +6,7 @@
  */
 
 $(document).ready(function () {
+
     var svNguoiDung = new ServiceNguoiDung();
     var nguoiDung = new NguoiDung();
     var khoaHoc = new KhoaHoc();
@@ -23,13 +24,12 @@ $(document).ready(function () {
         })
     LayTTNDDaluu("NguoiDung");
     LoadChiTietKH();
-    $("#fountainG").hide();
-    $("#divItemSearch").hide();
+
 
     svKhoaHoc.LayDanhSachKhoaHoc().done((ListKH) => {
         console.log(ListKH)
         DSKH.MangKH = ListKH;
-        LoadKH(DSKH.MangKH);
+        LoadKH(ListKH);
     }).fail((loi) => {
         console.log(loi + "bị lỗi rồi")
     })
@@ -335,7 +335,7 @@ $(document).ready(function () {
                         <div class="card-body">
                             <h4 class="card-title">${khoaHoc.TenKhoaHoc}</h4>
                             <div class="card-text" style="height:70px">${mota}</div>
-                            <a href="chitietkhoahoc.html" class="btn btn-primary">Xem Chi Tiết</a>
+                            <a href="#" class="btn chiTietKH btn-primary" maKH = "${khoaHoc.MaKhoaHoc}">Xem Chi Tiết</a>
                         </div>
                     </div>
                     </div>
@@ -383,7 +383,12 @@ $(document).ready(function () {
             for (var i = 0; i < data.length; i++) {
                 khoahoc = data[i];
                 var mota = khoahoc.MoTa;
-                khoahoc.MoTa.length >= 100 ? mota = khoahoc.MoTa.substring(0, 100) + "..." : mota = khoahoc.MoTa;
+                if(khoahoc.MoTa == null){
+                    mota = "null";
+                }else{
+                    khoahoc.MoTa.length >= 100 ? mota = khoahoc.MoTa.substring(0, 100) + "..." : mota = khoahoc.MoTa;
+                }
+                
                 html += `
                 <div class="col-md-4 col-sm-6 col-12 pb-5 khoahocItem">
                 <div class="card">
@@ -405,12 +410,26 @@ $(document).ready(function () {
 
     //Lấy mã khóa học để hiện thị chi tiết khóa học
     $("body").delegate(".chiTietKH", "click", function () {
+        var pathPage = window.location.pathname;
+        console.log(pathPage);
         var maKH = $(this).attr("maKH");
         khoaHoc = DSKH.LayThongTinKhoaHoc(maKH);
         LuuDuLieuVaoLocal("KhoaHocDaChon", khoaHoc);
         $("#fountainG").fadeIn();
+        $("#ghidanhLoader").fadeIn();
+        var urlIndex = "/index.html";
+        var urlUser = "/user.html";
         setTimeout(() => {
-            window.location.href = "chitietkhoahoc.html";
+            $("#fountainG").fadeOut();
+            $("#ghidanhLoader").fadeOut();
+            if (pathPage == urlIndex || pathPage == "/") {
+                window.location.href = "layouts/chitietkhoahoc.html";
+            } else if (pathPage == urlUser) {
+                window.location.href = "layouts/chitietkhoahoc.html";
+                $("#ghiDanhKHCHV").css({ "cursor": "no-drop" });
+            } else {
+                window.location.href = "chitietkhoahoc.html";
+            }
         }, 2000);
     })
 
@@ -490,28 +509,33 @@ $(document).ready(function () {
         var tuKhoa = $(this).val();
 
         var danhSachTimKiem = DSKH.TimKhoaHoc(tuKhoa);
-        
+
         if (danhSachTimKiem.MangKH != null) {
             $("#divItemSearch").fadeIn();
-            $("#titleSearch").html("Có " + danhSachTimKiem.MangKH.length +" kết quả tìm kiếm" )
+            $("#titleSearch").html("Có " + danhSachTimKiem.MangKH.length + " kết quả tìm kiếm")
             var itemKH = "";
             for (var i = 0; i < danhSachTimKiem.MangKH.length; i++) {
                 khoaHoc = danhSachTimKiem.MangKH[i];
+                var tenKH = khoaHoc.TenKhoaHoc;
+                khoaHoc.TenKhoaHoc.length >= 15 ? tenKH=khoaHoc.TenKhoaHoc.substring(0,15) + "..." : tenKH = khoaHoc.TenKhoaHoc ;
                 itemKH += `
-                    <a href="#" class="nav-link itemKhoaHoc mt-2 p-1 rounded border" maKhoaHoc="${khoaHoc.MaKhoaHoc}">
-                        <div class="row ">
-                            <div class="col-7 mx-0 px-0 text-center">
-                                <img src="${khoaHoc.HinhAnh}" alt="HinhAnhKH" style="width: 100px;height:66px">
+                    <a href="#" class="nav-link chiTietKH mt-2 p-1 rounded border" maKH="${khoaHoc.MaKhoaHoc}">
+                        <div class="row mx-0 divItemKH">
+                            <div class="col-lg-5 col-3 mx-0 px-0">
+                                <img src="${khoaHoc.HinhAnh}" class="imgKHTK" alt="HinhAnhKH">
                             </div>
-                            <div class="col-5 mx-0 px-0">${khoaHoc.TenKhoaHoc}</div>
+                            <div class="col-lg-7 col-9 px-0 divTenKH">
+                            <span class="nameKHTk">${tenKH}</span>
+                            </div>
                         </div>
                     </a>
                 `
             }
             $("#listDSKHTK").html(itemKH);
-        }else{
+        } else {
             $("#titleSearch").html("Không tìm được khóa học có tên " + tuKhoa);
         }
 
     })
+
 })

@@ -1,10 +1,9 @@
-@import 'Base/_reset.scss';
-
-
 @import 'Helpers/_variable.scss';
 @import 'Helpers/_animation.scss';
 @import 'Helpers/_mixin.scss';
 @import 'Helpers/_extend.scss';
+
+@import 'Base/_reset.scss';
 
 @import 'Component/_button.scss';
 @import 'Component/_loginForm.scss';

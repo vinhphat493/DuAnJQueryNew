@@ -1,0 +1,198 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+.cssload-container * {
+	color: rgb(0,0,0);
+	font-size: 32px;
+	font-weight: 700;
+	font-family: 'Open Sans', sans-serif;
+}
+.cssload-container {
+	position: absolute;
+	width: 114px;
+	height: 47px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+}
+.cssload-container > div {
+	position: absolute;
+	transform-origin: center;
+		-o-transform-origin: center;
+		-ms-transform-origin: center;
+		-webkit-transform-origin: center;
+		-moz-transform-origin: center;
+}
+.cssload-l {
+	left: 8px;
+}
+.cssload-i {
+	left: 57px;
+}
+.cssload-n {
+	left: 68px;
+}
+.cssload-g {
+	left: 94px;
+}
+.cssload-square,
+.cssload-circle,
+.cssload-triangle {
+	left: 28px;
+}
+.cssload-square {
+	background: rgb(117,179,209);
+	width: 23px;
+	height: 23px;
+	left: 30px;
+	top: 11px;
+	transform: scale(0);
+		-o-transform: scale(0);
+		-ms-transform: scale(0);
+		-webkit-transform: scale(0);
+		-moz-transform: scale(0);
+	animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-o-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-ms-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-webkit-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-moz-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+	animation-delay: 2.3s;
+		-o-animation-delay: 2.3s;
+		-ms-animation-delay: 2.3s;
+		-webkit-animation-delay: 2.3s;
+		-moz-animation-delay: 2.3s;
+}
+.cssload-circle {
+	background: rgb(129,212,125);
+	width: 26px;
+	height: 26px;
+	top: 9px;
+	left: 28px;
+	border-radius: 50%;
+	animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-o-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-ms-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-webkit-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-moz-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+	animation-delay: 0s;
+		-o-animation-delay: 0s;
+		-ms-animation-delay: 0s;
+		-webkit-animation-delay: 0s;
+		-moz-animation-delay: 0s;
+}
+.cssload-triangle {
+	width: 0;
+	height: 0;
+	left: 28px;
+	top: 10px;
+	border-style: solid;
+	border-width: 0 13.5px 24.1px 13.5px;
+	border-color: transparent transparent rgb(210,121,140) transparent;
+	transform: scale(0);
+		-o-transform: scale(0);
+		-ms-transform: scale(0);
+		-webkit-transform: scale(0);
+		-moz-transform: scale(0);
+	animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-o-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-ms-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-webkit-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+		-moz-animation: cssload-shrinkgrow 3.45s ease-in-out infinite;
+	animation-delay: 1.15s;
+		-o-animation-delay: 1.15s;
+		-ms-animation-delay: 1.15s;
+		-webkit-animation-delay: 1.15s;
+		-moz-animation-delay: 1.15s;
+}
+
+
+@keyframes cssload-shrinkgrow {
+	0% {
+		transform: scale(0);
+	}
+	12.5% {
+		transform: scale(1);
+	}
+	25% {
+		transform: scale(1);
+	}
+	33% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
+@-o-keyframes cssload-shrinkgrow {
+	0% {
+		-o-transform: scale(0);
+	}
+	12.5% {
+		-o-transform: scale(1);
+	}
+	25% {
+		-o-transform: scale(1);
+	}
+	33% {
+		-o-transform: scale(0);
+	}
+	100% {
+		-o-transform: scale(0);
+	}
+}
+
+@-ms-keyframes cssload-shrinkgrow {
+	0% {
+		-ms-transform: scale(0);
+	}
+	12.5% {
+		-ms-transform: scale(1);
+	}
+	25% {
+		-ms-transform: scale(1);
+	}
+	33% {
+		-ms-transform: scale(0);
+	}
+	100% {
+		-ms-transform: scale(0);
+	}
+}
+
+@-webkit-keyframes cssload-shrinkgrow {
+	0% {
+		-webkit-transform: scale(0);
+	}
+	12.5% {
+		-webkit-transform: scale(1);
+	}
+	25% {
+		-webkit-transform: scale(1);
+	}
+	33% {
+		-webkit-transform: scale(0);
+	}
+	100% {
+		-webkit-transform: scale(0);
+	}
+}
+
+@-moz-keyframes cssload-shrinkgrow {
+	0% {
+		-moz-transform: scale(0);
+	}
+	12.5% {
+		-moz-transform: scale(1);
+	}
+	25% {
+		-moz-transform: scale(1);
+	}
+	33% {
+		-moz-transform: scale(0);
+	}
+	100% {
+		-moz-transform: scale(0);
+	}
+}

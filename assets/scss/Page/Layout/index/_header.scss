@@ -17,8 +17,6 @@
         }
     } 
     .form-inline{
-        
-        
         input{
             @include MediaQuery(992px){
                 width: 88%;
@@ -29,6 +27,51 @@
             @include MediaQuery(576px){
                 margin-right: $mg-1;
             }
+        }
+        #divItemSearch{
+            position: absolute; 
+            top: 120%;
+            width: 100%;
+            background-color: white;
+            padding: 5px;
+            @include MediaQuery(992px){
+                position: unset;
+                top:unset;
+                margin-top: 5px;
+                width: 50%
+            }
+            @include MediaQuery(768px){
+                width: 70%
+            }
+            #listDSKHTK{
+                width: 100%;
+                .divItemKH{
+                    @include MediaQuery(992px){
+                        .nameKHTk{
+                            padding-left: 20px;
+                        }
+                    }
+                    @include MediaQuery(768px){
+                        .nameKHTk{
+                            padding-left: 27px;
+                        }
+                    }
+                    @include MediaQuery(576px){
+                        .nameKHTk{
+                            padding-left: 35px;
+                        }
+                    }
+                    .imgKHTK{
+                        width: 100px;
+                        height:66px
+                    }
+                    .divTenKH{
+                        overflow: hidden;
+                    }
+                }
+                
+            }
+            
         }
     }
     .nav-link{

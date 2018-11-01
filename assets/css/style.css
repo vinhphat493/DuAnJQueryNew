@@ -1,3 +1,15 @@
+@keyframes aniItemHocVien {
+  0% {
+    width: 0; }
+  50% {
+    width: 100%; }
+  100% {
+    width: 0; } }
+.bgImg, #myModal .modal-dialog .row .left {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
 a, a:hover, a:visited {
   text-decoration: none !important; }
 
@@ -19,18 +31,6 @@ body {
 
 header, nav, aside, section, article, main, footer {
   display: block; }
-
-@keyframes aniItemHocVien {
-  0% {
-    width: 0; }
-  50% {
-    width: 100%; }
-  100% {
-    width: 0; } }
-.bgImg, #myModal .modal-dialog .row .left {
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat; }
 
 /* BACK TO TOP */
 #myBtn {
@@ -246,6 +246,37 @@ header, nav, aside, section, article, main, footer {
   @media screen and (max-width: 576px) {
     #header .form-inline input {
       margin-right: 10px; } }
+  #header .form-inline #divItemSearch {
+    position: absolute;
+    top: 120%;
+    width: 100%;
+    background-color: white;
+    padding: 5px; }
+    @media screen and (max-width: 992px) {
+      #header .form-inline #divItemSearch {
+        position: unset;
+        top: unset;
+        margin-top: 5px;
+        width: 50%; } }
+    @media screen and (max-width: 768px) {
+      #header .form-inline #divItemSearch {
+        width: 70%; } }
+    #header .form-inline #divItemSearch #listDSKHTK {
+      width: 100%; }
+      @media screen and (max-width: 992px) {
+        #header .form-inline #divItemSearch #listDSKHTK .divItemKH .nameKHTk {
+          padding-left: 20px; } }
+      @media screen and (max-width: 768px) {
+        #header .form-inline #divItemSearch #listDSKHTK .divItemKH .nameKHTk {
+          padding-left: 27px; } }
+      @media screen and (max-width: 576px) {
+        #header .form-inline #divItemSearch #listDSKHTK .divItemKH .nameKHTk {
+          padding-left: 35px; } }
+      #header .form-inline #divItemSearch #listDSKHTK .divItemKH .imgKHTK {
+        width: 100px;
+        height: 66px; }
+      #header .form-inline #divItemSearch #listDSKHTK .divItemKH .divTenKH {
+        overflow: hidden; }
   #header .nav-link {
     color: #2e373d;
     font-weight: 600; }
